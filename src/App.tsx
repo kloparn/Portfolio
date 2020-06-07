@@ -1,17 +1,18 @@
 import React, { Component, useState, useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { theme } from "./styles/default-theme";
+import { theme, darkTheme } from "./styles/default-theme";
 import Switch from "react-switch";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
   const [mode, setMode] = useState(false);
 
   return (
-    <ThemeProvider theme={theme}>
-      <MainView>{mode}</MainView>
+    <ThemeProvider theme={mode ? theme : darkTheme}>
       <Switch onChange={() => setMode(!mode)} checked={mode}></Switch>
+      <h1>
+        current theme {mode ? JSON.stringify(theme) : JSON.stringify(darkTheme)}
+      </h1>
     </ThemeProvider>
   );
 }
