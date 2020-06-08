@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { theme, darkTheme } from "../styles/default-theme";
 import { DefaultTheme } from "styled-components";
 import styled, { ThemeProvider } from "styled-components";
 
