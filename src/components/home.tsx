@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { DefaultTheme } from "styled-components";
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 
 export const home = (props: DefaultTheme) => {
   return (
