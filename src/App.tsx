@@ -16,26 +16,20 @@ function App() {
     localStorage.setItem("lightMode", JSON.stringify(lightMode));
   }, [lightMode]);
 
-  const storeMode = () => {
-    localStorage.setItem("lightMode", JSON.stringify(lightMode));
-    setMode(!lightMode);
-  };
-
   return (
     <ThemeProvider theme={lightMode ? theme : darkTheme}>
       <ScreenView>
         <SwitchContainer>
-          <Switch onChange={storeMode} checked={!lightMode}></Switch>
+          <Switch
+            onChange={() => setMode(!lightMode)}
+            checked={!lightMode}
+          ></Switch>
           <DarkModeParagraph>
             <b>Dark mode</b>
           </DarkModeParagraph>
         </SwitchContainer>
         {/* Navbar shall go here with the {home(theme) going inside it}*/}
         {home(theme)}
-        <h1>
-          current theme{" "}
-          {lightMode ? JSON.stringify(theme) : JSON.stringify(darkTheme)}
-        </h1>
       </ScreenView>
     </ThemeProvider>
   );
