@@ -6,16 +6,26 @@ import "./App.css";
 import { home } from "./components/home";
 
 function App() {
-  const [lightMode, setMode] = useState(true);
+  const [lightMode, setMode] = useState(
+    localStorage.getItem("lightMode") == null
+      ? false
+      : JSON.parse(localStorage.getItem("lightMode")!)
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem("lightMode", JSON.stringify(lightMode));
+  }, [lightMode]);
+
+  const storeMode = () => {
+    localStorage.setItem("lightMode", JSON.stringify(lightMode));
+    setMode(!lightMode);
+  };
 
   return (
     <ThemeProvider theme={lightMode ? theme : darkTheme}>
       <ScreenView>
         <SwitchContainer>
-          <Switch
-            onChange={() => setMode(!lightMode)}
-            checked={!lightMode}
-          ></Switch>
+          <Switch onChange={storeMode} checked={!lightMode}></Switch>
           <DarkModeParagraph>
             <b>Dark mode</b>
           </DarkModeParagraph>
