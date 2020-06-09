@@ -5,15 +5,15 @@ import styled from "styled-components";
 const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
   return (
     <ListWrapper>
-      <li>
+      <List>
         <ListItem to="/">Home</ListItem>
-      </li>
-      <li>
+      </List>
+      <List>
         <ListItem to="/about">About</ListItem>
-      </li>
-      <li>
+      </List>
+      <List>
         <ListItem to="/projects">Projects</ListItem>
-      </li>
+      </List>
       <SwitchBox>{CustomSwitch}</SwitchBox>
     </ListWrapper>
   );
@@ -23,8 +23,12 @@ type Props = {
   CustomSwitch: JSX.Element;
 };
 
+const List = styled.li`
+  padding: 2rem;
+`;
+
 const SwitchBox = styled.li`
-  float: right;
+  padding: 2rem;
 `;
 
 const ListWrapper = styled.ul`
@@ -35,7 +39,7 @@ const ListWrapper = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `;
 
 const ListItem = styled(Link)`
@@ -44,7 +48,10 @@ const ListItem = styled(Link)`
   text-decoration: none;
   font-weight: bold;
   color: ${(props) => props.theme.colors.text};
-  border-right: 1px solid #ccc;
+  font-size: 2rem;
+  border: 1px solid ${(props) => props.theme.colors.text};
+  width: 200%;
+  text-align: center;
   :hover {
     color: green;
     cursor: pointer;
