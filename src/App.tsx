@@ -6,6 +6,7 @@ import ThemeSwitch from "react-switch";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { HomePage, AboutPage, ProjectsPage } from "./pages";
+import { url } from "inspector";
 
 function App() {
   const [lightMode, setMode] = useState(
@@ -21,29 +22,30 @@ function App() {
   return (
     <ThemeProvider theme={lightMode ? theme : darkTheme}>
       <ScreenView>
-        <Router>
-          <Navbar
-            CustomSwitch={
-              <SwitchContainer>
-                <ThemeSwitch
-                  onChange={() => setMode(!lightMode)}
-                  checked={!lightMode}
-                ></ThemeSwitch>
-                <DarkModeParagraph>
-                  <b>Dark mode</b>
-                </DarkModeParagraph>
-              </SwitchContainer>
-            }
-          />
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/about" component={AboutPage} />
-          <Route exact path="/projects" component={ProjectsPage} />
-        </Router>
-
-        <Container>
-          <NavbarTemp></NavbarTemp>
-        </Container>
-        {/* Navbar shall go here with the {home(theme) going inside it}*/}
+        <BackgroundPicture>
+          <Router>
+            <Navbar
+              CustomSwitch={
+                <SwitchContainer>
+                  <ThemeSwitch
+                    onChange={() => setMode(!lightMode)}
+                    checked={!lightMode}
+                  ></ThemeSwitch>
+                  <DarkModeParagraph>
+                    <b>Dark mode</b>
+                  </DarkModeParagraph>
+                </SwitchContainer>
+              }
+            />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/projects" component={ProjectsPage} />
+          </Router>
+          <Container>
+            <NavbarTemp></NavbarTemp>
+          </Container>
+          {/* Navbar shall go here with the {home(theme) going inside it}*/}
+        </BackgroundPicture>
       </ScreenView>
     </ThemeProvider>
   );
@@ -70,6 +72,10 @@ const ScreenView = styled.div`
   color: ${(props) => props.theme.colors.text};
   width: 100%;
   height: 100%;
+`;
+const BackgroundPicture = styled.main`
+  background-image: ${require("./Background.png")};
+  background-color: transparent;
 `;
 
 const SwitchContainer = styled.div`
