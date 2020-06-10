@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { theme, darkTheme } from "./styles/default-theme";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ThemeSwitch from "react-switch";
 import "./App.css";
 import { Navbar, Footer } from "./components";
 import { HomePage, AboutPage, ProjectsPage } from "./pages";
-import { url } from "inspector";
 
 function App() {
   const [lightMode, setMode] = useState(
@@ -62,9 +61,6 @@ const NavbarTemp = styled.ul`
   margin: 0 0 3em 0;
   padding: 0;
   list-style: none;
-`;
-const NavbarItem = styled.li`
-  display: flex;
 `;
 
 const ScreenView = styled.div`

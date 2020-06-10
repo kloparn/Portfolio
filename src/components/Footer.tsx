@@ -1,30 +1,42 @@
 import React from "react";
 import styled from "styled-components";
+import { FaFacebook, FaGit, FaLinkedin } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <FootHolder>
-      <CustomFoot>This is a footer</CustomFoot>
-    </FootHolder>
+    <CustomFoot>
+      <p>Created by Adam Håkansson. @ 2020</p>
+      <section>
+        <Anchor href="https://www.facebook.com/adam97.live/">
+          <FaFacebook />
+        </Anchor>
+        <Anchor href="https://github.com/kloparn">
+          <FaGit />
+        </Anchor>
+        <Anchor href="https://www.linkedin.com/in/adam-h%C3%A5kansson-15942313a/">
+          <FaLinkedin />
+        </Anchor>
+      </section>
+    </CustomFoot>
   );
 };
-
-const FootHolder = styled.div`
-  display: block;
-  height: 60px;
-  width: 100%;
-`;
 
 const CustomFoot = styled.footer`
   background-color: ${(props) => props.theme.colors.third};
   border-top: 1px solid #ccc;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   position: fixed;
   left: 0;
   bottom: 0;
   height: 60px;
   width: 100%;
+`;
+
+const Anchor = styled.a`
+  padding: 1rem;
+  font-size: 2rem;
+  color: ${(props) => props.theme.colors.forth};
 `;
 
 export default Footer;

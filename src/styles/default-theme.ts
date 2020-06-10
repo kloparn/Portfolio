@@ -5,7 +5,7 @@ export const darkTheme: DefaultTheme = {
     main: "#162447",
     secondary: "#1f4068",
     third: "#1b1b2f",
-    forth: "#e43f5a",
+    forth: "#add8e6",
     text: "#ffffff",
   },
 };
