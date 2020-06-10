@@ -12,10 +12,10 @@ export const darkTheme: DefaultTheme = {
 
 export const theme: DefaultTheme = {
   colors: {
-    main: "#eeeeee",
-    secondary: "#32e0c4",
-    third: "393e46",
-    forth: "222831",
+    main: "#D7FDEC",
+    secondary: "#A9FBD7",
+    third: "#B2E4DB",
+    forth: "#B0C6CE",
     text: "#000000",
   },
 };
