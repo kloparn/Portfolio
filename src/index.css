@@ -15,3 +15,7 @@ code {
 #selected {
   opacity: 0.6;
 }
+
+#notSelected:hover {
+  background-color: darkcyan;
+}

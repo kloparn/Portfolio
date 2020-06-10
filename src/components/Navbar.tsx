@@ -20,7 +20,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
         <ListItem
           to="/"
           onClick={() => switchTab(1)}
-          id={currentTab == 1 ? "selected" : ""}
+          id={currentTab == 1 ? "selected" : "notSelected"}
         >
           Home
         </ListItem>
@@ -29,7 +29,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
         <ListItem
           to="/about"
           onClick={() => switchTab(2)}
-          id={currentTab == 2 ? "selected" : ""}
+          id={currentTab == 2 ? "selected" : "notSelected"}
         >
           About
         </ListItem>
@@ -38,7 +38,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
         <ListItem
           to="/projects"
           onClick={() => switchTab(3)}
-          id={currentTab == 3 ? "selected" : ""}
+          id={currentTab == 3 ? "selected" : "notSelected"}
         >
           Projects
         </ListItem>
@@ -60,9 +60,6 @@ const Logo = styled.h1`
 
 const List = styled.li`
   padding: 2rem;
-  :hover {
-    opacity: 0.6;
-  }
 `;
 
 const SwitchBox = styled.li`
