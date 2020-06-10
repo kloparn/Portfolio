@@ -1,21 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
+  const [currentTab, switchTab] = useState(
+    localStorage.getItem("lightMode") == null
+      ? 1
+      : JSON.parse(localStorage.getItem("currentTab")!)
+  );
+
+  useEffect(() => {
+    localStorage.setItem("currentTab", JSON.stringify(currentTab));
+  }, [currentTab]);
+
   return (
     <ListWrapper>
       <Logo> Adams Portfolio </Logo>
       <List>
-        <ListItem to="/">Home</ListItem>
+        <ListItem
+          to="/"
+          onClick={() => switchTab(1)}
+          id={currentTab == 1 ? "selected" : ""}
+        >
+          Home
+        </ListItem>
       </List>
       <List>
-        <ListItem to="/about">About</ListItem>
+        <ListItem
+          to="/about"
+          onClick={() => switchTab(2)}
+          id={currentTab == 2 ? "selected" : ""}
+        >
+          About
+        </ListItem>
       </List>
       <List>
-        <ListItem to="/projects">Projects</ListItem>
+        <ListItem
+          to="/projects"
+          onClick={() => switchTab(3)}
+          id={currentTab == 3 ? "selected" : ""}
+        >
+          Projects
+        </ListItem>
       </List>
-
       <SwitchBox>{CustomSwitch}</SwitchBox>
     </ListWrapper>
   );
@@ -33,6 +60,9 @@ const Logo = styled.h1`
 
 const List = styled.li`
   padding: 2rem;
+  :hover {
+    opacity: 0.6;
+  }
 `;
 
 const SwitchBox = styled.li`
@@ -53,15 +83,12 @@ const ListItem = styled(Link)`
   padding: 8px 15px;
   text-decoration: none;
   font-weight: bold;
+  background-color: ${(props) => props.theme.colors.third};
   color: ${(props) => props.theme.colors.text};
   font-size: 2rem;
   border: 1px solid ${(props) => props.theme.colors.text};
   width: 200%;
   text-align: center;
-  :hover {
-    color: green;
-    cursor: pointer;
-  }
 `;
 
 export default Navbar;

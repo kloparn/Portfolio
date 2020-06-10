@@ -8,5 +8,7 @@ const ProjectsPage: React.FC = () => {
 const Layout = styled.main`
   background-color: ${(props) => props.theme.colors.main};
   color: ${(props) => props.theme.colors.text};
+  text-align: center;
+  display: center;
 `;
 export default ProjectsPage;
