@@ -4,7 +4,7 @@ import { theme, darkTheme } from "./styles/default-theme";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ThemeSwitch from "react-switch";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import { Navbar, Footer } from "./components";
 import { HomePage, AboutPage, ProjectsPage } from "./pages";
 import { url } from "inspector";
 
@@ -46,6 +46,7 @@ function App() {
           </Container>
           {/* Navbar shall go here with the {home(theme) going inside it}*/}
         </BackgroundPicture>
+        <Footer />
       </ScreenView>
     </ThemeProvider>
   );
