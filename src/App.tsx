@@ -45,8 +45,8 @@ function App() {
           </Container>
           {/* Navbar shall go here with the {home(theme) going inside it}*/}
         </BackgroundPicture>
-        <Footer />
       </ScreenView>
+      <Footer />
     </ThemeProvider>
   );
 }
@@ -64,11 +64,10 @@ const NavbarTemp = styled.ul`
 `;
 
 const ScreenView = styled.div`
-  position: absolute;
   background-color: ${(props) => props.theme.colors.main};
   color: ${(props) => props.theme.colors.text};
   width: 100%;
-  height: 100%;
+  height: 100vh;
 `;
 const BackgroundPicture = styled.main`
   background-image: ${require("./Background.png")};

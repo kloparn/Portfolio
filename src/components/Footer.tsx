@@ -5,7 +5,7 @@ import { FaFacebook, FaGit, FaLinkedin } from "react-icons/fa";
 const Footer: React.FC = () => {
   return (
     <CustomFoot>
-      <p>Created by Adam Håkansson. @ 2020</p>
+      <CustomP>Created by Adam Håkansson. @ 2020</CustomP>
       <section>
         <Anchor href="https://www.facebook.com/adam97.live/">
           <FaFacebook />
@@ -21,16 +21,15 @@ const Footer: React.FC = () => {
   );
 };
 
+const CustomP = styled.p`
+  color: ${(props) => props.theme.colors.text};
+`;
+
 const CustomFoot = styled.footer`
   background-color: ${(props) => props.theme.colors.third};
   border-top: 1px solid #ccc;
   text-align: center;
   padding: 2rem;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 60px;
-  width: 100%;
 `;
 
 const Anchor = styled.a`
