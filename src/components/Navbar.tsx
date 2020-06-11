@@ -68,11 +68,10 @@ const SwitchBox = styled.li`
 
 const ListWrapper = styled.ul`
   background-color: ${(props) => props.theme.colors.secondary};
-  margin: 0 0 3em 0;
-  padding: 0;
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const ListItem = styled(Link)`
