@@ -40,9 +40,6 @@ function App() {
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/projects" component={ProjectsPage} />
           </Router>
-          <Container>
-            <NavbarTemp></NavbarTemp>
-          </Container>
           {/* Navbar shall go here with the {home(theme) going inside it}*/}
         </BackgroundPicture>
       </ScreenView>
@@ -50,18 +47,6 @@ function App() {
     </ThemeProvider>
   );
 }
-
-const Container = styled.div`
-  display: center;
-  padding: 5px;
-`;
-
-const NavbarTemp = styled.ul`
-  width: 100%;
-  margin: 0 0 3em 0;
-  padding: 0;
-  list-style: none;
-`;
 
 const ScreenView = styled.div`
   background-color: ${(props) => props.theme.colors.main};

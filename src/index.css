@@ -19,3 +19,17 @@ code {
 #notSelected:hover {
   background-color: darkcyan;
 }
+
+.lineOne {
+  transform: rotate(45deg);
+}
+.lineTwo {
+  opacity: 0;
+}
+.lineThree {
+  transform: rotate(-45deg);
+}
+
+#closed {
+  transform: translateX(100%);
+}
