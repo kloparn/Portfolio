@@ -23,7 +23,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
   return (
     <Nav>
       <Logo> Adams Portfolio </Logo>
-      <ListWrapper id={!openBurger ? "closed" : ""}>
+      <ListWrapper id={!openBurger ? "closed" : "open"}>
         <List>
           <ListItem
             to="/"
