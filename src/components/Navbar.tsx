@@ -30,7 +30,10 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
         <List>
           <ListItem
             to="/"
-            onClick={() => switchTab(1)}
+            onClick={() => {
+              switchTab(1);
+              setOpen(!openBurger);
+            }}
             id={currentTab === 1 ? "selected" : "notSelected"}
           >
             Home
@@ -39,7 +42,10 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
         <List>
           <ListItem
             to="/about"
-            onClick={() => switchTab(2)}
+            onClick={() => {
+              switchTab(2);
+              setOpen(!openBurger);
+            }}
             id={currentTab === 2 ? "selected" : "notSelected"}
           >
             About
@@ -48,7 +54,10 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
         <List>
           <ListItem
             to="/projects"
-            onClick={() => switchTab(3)}
+            onClick={() => {
+              switchTab(3);
+              setOpen(!openBurger);
+            }}
             id={currentTab === 3 ? "selected" : "notSelected"}
           >
             Projects
