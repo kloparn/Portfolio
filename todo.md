@@ -8,4 +8,7 @@
   3. go back to destop view.
   4. results
 
-- Create a dropdown menu instead of a burger menu that slides in from the right. (much fancier?)
+## Progress
+
+It is now correctly displayed the first time you open the site, but will not be dynamicly updated, so if you go to burger menu mode,
+then close the menu and go back it's moved to the right.

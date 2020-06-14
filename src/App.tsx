@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { theme, darkTheme } from "./styles/default-theme";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -7,7 +7,7 @@ import "./App.css";
 import { Navbar, Footer } from "./components";
 import { HomePage, AboutPage, ProjectsPage } from "./pages";
 
-function App() {
+const App = () => {
   const [lightMode, setMode] = useState(
     localStorage.getItem("lightMode") == null
       ? false
@@ -46,7 +46,7 @@ function App() {
       <Footer />
     </ThemeProvider>
   );
-}
+};
 
 const ScreenView = styled.div`
   background-color: ${(props) => props.theme.colors.main};

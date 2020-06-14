@@ -23,7 +23,10 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
   return (
     <Nav>
       <Logo> Adams Portfolio </Logo>
-      <ListWrapper id={!openBurger ? "closed" : "open"}>
+      <ListWrapper
+        id={window.innerWidth > 1000 ? "open" : !openBurger ? "closed" : "open"}
+      >
+        {console.log(window.innerWidth)}
         <List>
           <ListItem
             to="/"
@@ -103,7 +106,7 @@ const ListWrapper = styled.ul`
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 60vh;
     width: 300px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
