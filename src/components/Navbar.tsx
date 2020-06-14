@@ -108,7 +108,7 @@ const ListWrapper = styled.ul`
     right: 0;
     height: 60vh;
     width: 300px;
-    padding-top: 3.5rem;
+    padding-top: 1.5rem;
     transition: transform 0.3s ease-in-out;
   }
 `;
