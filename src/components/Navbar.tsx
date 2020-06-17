@@ -26,7 +26,6 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
       <ListWrapper
         id={window.innerWidth > 1000 ? "open" : !openBurger ? "closed" : "open"}
       >
-        {console.log(window.innerWidth)}
         <List>
           <ListItem
             to="/"

@@ -12,6 +12,13 @@ const AboutPage: React.FC = () => {
   );
 };
 
+interface apiInterface {
+  name: String;
+  information: String;
+  picture: String;
+  built: String;
+}
+
 const Layout = styled.section`
   padding: 3rem 0 0 0;
   background-color: ${(props) => props.theme.colors.main};
