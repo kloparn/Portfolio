@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
+  const [width, setWidth] = useState(window.innerWidth);
+
   const [currentTab, switchTab] = useState(
     localStorage.getItem("lightMode") == null
       ? 1
@@ -18,14 +20,18 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
   useEffect(() => {
     localStorage.setItem("currentTab", JSON.stringify(currentTab));
     localStorage.setItem("openBurger", JSON.stringify(openBurger));
+
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
   }, [currentTab, openBurger]);
 
   return (
     <Nav>
       <Logo> Adams Portfolio </Logo>
-      <ListWrapper
-        id={window.innerWidth > 1000 ? "open" : !openBurger ? "closed" : "open"}
-      >
+      <ListWrapper id={width > 1000 ? "open" : !openBurger ? "closed" : "open"}>
         <List>
           <ListItem
             to="/"
