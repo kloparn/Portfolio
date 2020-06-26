@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const ProjectsPage: React.FC = () => {
-  return <Layout>Projects</Layout>;
+const ContactPage: React.FC = () => {
+  return <Layout>Contact page</Layout>;
 };
 
 const Layout = styled.main`
@@ -12,4 +12,5 @@ const Layout = styled.main`
   margin: auto;
   padding: 30vh 0;
 `;
-export default ProjectsPage;
+
+export default ContactPage;

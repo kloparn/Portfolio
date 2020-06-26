@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import ThemeSwitch from "react-switch";
 import "./App.css";
 import { Navbar, Footer } from "./components";
-import { HomePage, AboutPage, ProjectsPage } from "./pages";
+import { HomePage, AboutPage, ProjectsPage, ContactPage } from "./pages";
 
 const App = () => {
   const [lightMode, setMode] = useState(
@@ -36,9 +36,12 @@ const App = () => {
                 </SwitchContainer>
               }
             />
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/projects" component={ProjectsPage} />
+            <ComponentView>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/projects" component={ProjectsPage} />
+              <Route exact path="/contact" component={ContactPage} />
+            </ComponentView>
           </Router>
           {/* Navbar shall go here with the {home(theme) going inside it}*/}
         </BackgroundPicture>
@@ -59,11 +62,14 @@ const BackgroundPicture = styled.main`
   background-color: transparent;
 `;
 
+const ComponentView = styled.body`
+  overflow: hidden;
+  min-height: 100vh;
+`;
+
 const SwitchContainer = styled.div`
-  float: right;
   color: ${(props) => props.theme.colors.text};
-  display: table-row;
-  padding: 10px;
+  padding-left: 10vh;
 `;
 const DarkModeParagraph = styled.p`
   font-display: bold;

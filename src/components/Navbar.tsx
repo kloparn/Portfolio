@@ -31,7 +31,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
   return (
     <Nav>
       <Logo> Adams Portfolio </Logo>
-      <ListWrapper id={width > 1000 ? "open" : !openBurger ? "closed" : "open"}>
+      <ListWrapper id={width > 1240 ? "open" : !openBurger ? "closed" : "open"}>
         <List>
           <ListItem
             to="/"
@@ -68,6 +68,18 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
             Projects
           </ListItem>
         </List>
+        <List>
+          <ListItem
+            to="/contact"
+            onClick={() => {
+              switchTab(4);
+              setOpen(!openBurger);
+            }}
+            id={currentTab === 4 ? "selected" : "notSelected"}
+          >
+            Contact
+          </ListItem>
+        </List>
         <SwitchBox>{CustomSwitch}</SwitchBox>
       </ListWrapper>
       <StyledBurger onClick={() => setOpen(!openBurger)}>
@@ -90,6 +102,12 @@ const Nav = styled.nav`
   align-items: center;
   padding: 0 0 0 4rem;
   text-decoration: none;
+
+  @media (max-width: 1240px) {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
 `;
 
 const Logo = styled.h1`
@@ -99,7 +117,6 @@ const Logo = styled.h1`
 `;
 
 const SwitchBox = styled.div`
-  text-decoration: none;
   padding: 0 0 0 1rem;
 `;
 
@@ -114,7 +131,7 @@ const ListWrapper = styled.ul`
   justify-content: space-evenly;
   align-items: center;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1240px) {
     flex-direction: column;
     align-items: center;
     position: fixed;
@@ -149,7 +166,7 @@ const StyledBurger = styled.div`
   z-index: 20;
   visibility: hidden;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1240px) {
     position: fixed;
     top: 15px;
     right: 20px;
