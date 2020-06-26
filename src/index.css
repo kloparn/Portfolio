@@ -23,9 +23,11 @@ code {
 .lineOne {
   transform: rotate(45deg);
 }
+
 .lineTwo {
   opacity: 0;
 }
+
 .lineThree {
   transform: rotate(-45deg);
 }
@@ -36,4 +38,8 @@ code {
 
 #open {
   transform: translateY(0);
+}
+
+.selectedLink {
+  opacity: 0.7;
 }

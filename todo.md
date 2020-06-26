@@ -1,3 +1,4 @@
 # TODO LIST
 
-- Fix an issue so when you click on the buttons on the frontpage, it updates the navbar to indicate the current window you are on.
+- add information to the contact me page
+- add information to the project page, (do a api call to the back-end)

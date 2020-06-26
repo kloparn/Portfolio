@@ -20,6 +20,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={lightMode ? theme : darkTheme}>
+      {console.log(window.History)}
       <ScreenView>
         <BackgroundPicture>
           <Router>
@@ -43,7 +44,6 @@ const App = () => {
               <Route exact path="/contact" component={ContactPage} />
             </ComponentView>
           </Router>
-          {/* Navbar shall go here with the {home(theme) going inside it}*/}
         </BackgroundPicture>
       </ScreenView>
       <Footer />

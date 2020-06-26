@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
   const [width, setWidth] = useState(window.innerWidth);
-
-  const [currentTab, switchTab] = useState(
-    localStorage.getItem("lightMode") == null
-      ? 1
-      : JSON.parse(localStorage.getItem("currentTab")!)
-  );
 
   const [openBurger, setOpen] = useState(
     localStorage.getItem("openBurger") == null
@@ -18,7 +12,6 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
   );
 
   useEffect(() => {
-    localStorage.setItem("currentTab", JSON.stringify(currentTab));
     localStorage.setItem("openBurger", JSON.stringify(openBurger));
 
     const handleResize = () => {
@@ -26,59 +19,29 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
     };
 
     window.addEventListener("resize", handleResize);
-  }, [currentTab, openBurger]);
+  }, [openBurger]);
 
   return (
     <Nav>
       <Logo> Adams Portfolio </Logo>
       <ListWrapper id={width > 1240 ? "open" : !openBurger ? "closed" : "open"}>
         <List>
-          <ListItem
-            to="/"
-            onClick={() => {
-              switchTab(1);
-              setOpen(!openBurger);
-            }}
-            id={currentTab === 1 ? "selected" : "notSelected"}
-          >
-            Home
-          </ListItem>
+          <NavItem to="/">Home</NavItem>
         </List>
         <List>
-          <ListItem
-            to="/about"
-            onClick={() => {
-              switchTab(2);
-              setOpen(!openBurger);
-            }}
-            id={currentTab === 2 ? "selected" : "notSelected"}
-          >
+          <NavItem to="/about" activeClassName="selectedLink">
             About
-          </ListItem>
+          </NavItem>
         </List>
         <List>
-          <ListItem
-            to="/projects"
-            onClick={() => {
-              switchTab(3);
-              setOpen(!openBurger);
-            }}
-            id={currentTab === 3 ? "selected" : "notSelected"}
-          >
+          <NavItem to="/projects" activeClassName="selectedLink">
             Projects
-          </ListItem>
+          </NavItem>
         </List>
         <List>
-          <ListItem
-            to="/contact"
-            onClick={() => {
-              switchTab(4);
-              setOpen(!openBurger);
-            }}
-            id={currentTab === 4 ? "selected" : "notSelected"}
-          >
+          <NavItem to="/contact" activeClassName="selectedLink">
             Contact
-          </ListItem>
+          </NavItem>
         </List>
         <SwitchBox>{CustomSwitch}</SwitchBox>
       </ListWrapper>
@@ -144,7 +107,7 @@ const ListWrapper = styled.ul`
   }
 `;
 
-const ListItem = styled(Link)`
+const NavItem = styled(NavLink)`
   display: block;
   padding: 8px 15px;
   text-decoration: none;
@@ -155,6 +118,13 @@ const ListItem = styled(Link)`
   border: 1px solid ${(props) => props.theme.colors.text};
   width: 110%;
   text-align: center;
+
+  :hover {
+    opacity: 0.7;
+  }
+  :active {
+    background-color: black;
+  }
 `;
 
 const StyledBurger = styled.div`
