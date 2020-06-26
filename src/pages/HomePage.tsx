@@ -6,21 +6,19 @@ const HomePage: React.FC = () => {
   return (
     <Layout>
       <section>
-        <ul>
-          <Name>Adam Håkansson</Name>
-          <Description>
-            I'm a swedish newly graduate front-end & back-end developer <br />
-            Available for hire and or available for a full time job
-          </Description>
-          <ButtonSection>
-            <Link to="/projects">
-              <CustomButton>To my projects</CustomButton>
-            </Link>
-            <Link to="/contact">
-              <CustomButton>Contact me</CustomButton>
-            </Link>
-          </ButtonSection>
-        </ul>
+        <Name>Adam Håkansson</Name>
+        <Description>
+          I'm a swedish newly graduate front-end & back-end developer <br />
+          Available for hire and or available for a full time job
+        </Description>
+        <ButtonSection>
+          <Link to="/projects">
+            <CustomButton>To my projects</CustomButton>
+          </Link>
+          <Link to="/contact">
+            <CustomButton>Contact me</CustomButton>
+          </Link>
+        </ButtonSection>
       </section>
     </Layout>
   );
@@ -30,8 +28,7 @@ const Layout = styled.main`
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: auto;
-  padding: 25vh 0;
+  padding: 25vh;
 `;
 
 const Name = styled.p`

@@ -28,20 +28,45 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
       </Logo>
       <ListWrapper id={width > 1240 ? "open" : !openBurger ? "closed" : "open"}>
         <List>
-          <NavItem to="/">Home</NavItem>
+          <NavItem
+            to="/"
+            onClick={() => {
+              setOpen(!openBurger);
+            }}
+          >
+            Home
+          </NavItem>
         </List>
         <List>
-          <NavItem to="/about" activeClassName="selectedLink">
+          <NavItem
+            to="/about"
+            activeClassName="selectedLink"
+            onClick={() => {
+              setOpen(!openBurger);
+            }}
+          >
             About
           </NavItem>
         </List>
         <List>
-          <NavItem to="/projects" activeClassName="selectedLink">
+          <NavItem
+            to="/projects"
+            activeClassName="selectedLink"
+            onClick={() => {
+              setOpen(!openBurger);
+            }}
+          >
             Projects
           </NavItem>
         </List>
         <List>
-          <NavItem to="/contact" activeClassName="selectedLink">
+          <NavItem
+            to="/contact"
+            activeClassName="selectedLink"
+            onClick={() => {
+              setOpen(!openBurger);
+            }}
+          >
             Contact
           </NavItem>
         </List>
