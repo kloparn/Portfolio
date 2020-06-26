@@ -23,7 +23,9 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
 
   return (
     <Nav>
-      <Logo> Adams Portfolio </Logo>
+      <Logo>
+        <LinkLogo href="/"> Adams Portfolio </LinkLogo>
+      </Logo>
       <ListWrapper id={width > 1240 ? "open" : !openBurger ? "closed" : "open"}>
         <List>
           <NavItem to="/">Home</NavItem>
@@ -73,10 +75,17 @@ const Nav = styled.nav`
   }
 `;
 
+const LinkLogo = styled.a`
+  color: ${(props) => props.theme.colors.text};
+  background-color: ${(props) => props.theme.colors.secondary};
+  text-decoration: none;
+`;
+
 const Logo = styled.h1`
   font: 1em "gill sans, sans-serif";
   font-size: 3rem;
   color: ${(props) => props.theme.colors.text};
+  text-decoration: none;
 `;
 
 const SwitchBox = styled.div`
@@ -123,7 +132,7 @@ const NavItem = styled(NavLink)`
     opacity: 0.7;
   }
   :active {
-    background-color: black;
+    background-color: ${(props) => props.theme.colors.backgroundActive};
   }
 `;
 

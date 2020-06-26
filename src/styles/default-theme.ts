@@ -7,6 +7,7 @@ export const darkTheme: DefaultTheme = {
     third: "#1b1b2f",
     forth: "#add8e6",
     text: "#ffffff",
+    backgroundActive: "black",
   },
 };
 
@@ -17,5 +18,6 @@ export const theme: DefaultTheme = {
     third: "#B2E4DB",
     forth: "#B0C6CE",
     text: "#000000",
+    backgroundActive: "lightgreen",
   },
 };
