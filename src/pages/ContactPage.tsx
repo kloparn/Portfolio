@@ -8,7 +8,7 @@ const ContactPage: React.FC = () => {
       <Paragraph>
         For any businesses or private companies who wants a job done, hit me up
         on my email. Simply press the link below to get the email copied to your
-        clipboard.
+        clipboard. <br /> Im looking forward to hear from you!
         <br />
         <FakeButton
           onClick={() => {
@@ -30,16 +30,15 @@ const Layout = styled.main`
   padding: 10vh;
 
   @media (max-width: 1000px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 `;
 
 const CustomImg = styled.img`
-  width: 40%;
+  width: 60%;
   height: auto;
   @media (max-width: 1000px) {
-    width: 80%;
-    height: auto;
+    width: 100%;
   }
 `;
 
