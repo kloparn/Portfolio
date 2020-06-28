@@ -7,7 +7,7 @@ const ContactPage: React.FC = () => {
     <Layout>
       <CustomImg src="email.jpg" alt="mail me"></CustomImg>
       <Paragraph>
-        For any businesses or private companies who wants a job done, hit me up
+        For any businesses or private companies who wants a job done, contact me
         on my email. Simply press the link below to get the email copied to your
         clipboard. <br /> Im looking forward to hear from you!
         <br />

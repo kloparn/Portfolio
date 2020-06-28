@@ -28,13 +28,13 @@ const Layout = styled.main`
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 10vh;
+  padding-top: 30vh;
   background-image: url("background.png");
   background-size: cover;
   min-height: 80vh;
 `;
 
-const Name = styled.p`
+const Name = styled.h1`
   font: 1em "gill sans, sans-serif";
   font-size: 3rem;
 `;

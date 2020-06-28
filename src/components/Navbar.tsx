@@ -32,6 +32,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
             to="/"
             onClick={() => {
               setOpen(!openBurger);
+              document.title = "Home | Portfolio";
             }}
           >
             Home
@@ -43,6 +44,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
             activeClassName="selectedLink"
             onClick={() => {
               setOpen(!openBurger);
+              document.title = "About | Portfolio";
             }}
           >
             About
@@ -54,6 +56,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
             activeClassName="selectedLink"
             onClick={() => {
               setOpen(!openBurger);
+              document.title = "Projects | Portfolio";
             }}
           >
             Projects
@@ -65,6 +68,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
             activeClassName="selectedLink"
             onClick={() => {
               setOpen(!openBurger);
+              document.title = "Contact | Portfolio";
             }}
           >
             Contact
@@ -107,7 +111,7 @@ const LinkLogo = styled.a`
 `;
 
 const Logo = styled.h1`
-  font: 1em "gill sans, sans-serif";
+  font: 1em "Bookman";
   font-size: 3rem;
   color: ${(props) => props.theme.colors.text};
   text-decoration: none;
@@ -134,7 +138,7 @@ const ListWrapper = styled.ul`
     position: fixed;
     top: 0;
     right: 0;
-    height: 60vh;
+    height: 70vh;
     width: 300px;
     padding-top: 1.5rem;
     transition: transform 0.3s ease-in-out;

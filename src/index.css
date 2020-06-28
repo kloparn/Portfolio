@@ -37,7 +37,7 @@ code {
 }
 
 #open {
-  transform: translateY(0);
+  transform: translateY(-3%);
 }
 
 .selectedLink {
