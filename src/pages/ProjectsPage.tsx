@@ -10,6 +10,6 @@ const Layout = styled.main`
   justify-content: center;
   text-align: center;
   margin: auto;
-  padding: 30vh 0;
+  padding: 30vh;
 `;
 export default ProjectsPage;

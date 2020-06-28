@@ -8,6 +8,7 @@ export const darkTheme: DefaultTheme = {
     forth: "#add8e6",
     text: "#ffffff",
     backgroundActive: "black",
+    linkColor: "lightblue",
   },
 };
 
@@ -19,5 +20,6 @@ export const theme: DefaultTheme = {
     forth: "#B0C6CE",
     text: "#000000",
     backgroundActive: "lightgreen",
+    linkColor: "darkblue",
   },
 };
