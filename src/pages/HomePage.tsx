@@ -28,7 +28,10 @@ const Layout = styled.main`
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 25vh;
+  padding: 10vh;
+  background-image: url("background.png");
+  background-size: cover;
+  min-height: 80vh;
 `;
 
 const Name = styled.p`

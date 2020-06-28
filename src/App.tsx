@@ -22,29 +22,27 @@ const App = () => {
     <ThemeProvider theme={lightMode ? theme : darkTheme}>
       {console.log(window.History)}
       <ScreenView>
-        <BackgroundPicture>
-          <Router>
-            <Navbar
-              CustomSwitch={
-                <SwitchContainer>
-                  <ThemeSwitch
-                    onChange={() => setMode(!lightMode)}
-                    checked={!lightMode}
-                  ></ThemeSwitch>
-                  <DarkModeParagraph>
-                    <b>Dark mode</b>
-                  </DarkModeParagraph>
-                </SwitchContainer>
-              }
-            />
-            <ComponentView>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/about" component={AboutPage} />
-              <Route exact path="/projects" component={ProjectsPage} />
-              <Route exact path="/contact" component={ContactPage} />
-            </ComponentView>
-          </Router>
-        </BackgroundPicture>
+        <Router>
+          <Navbar
+            CustomSwitch={
+              <SwitchContainer>
+                <ThemeSwitch
+                  onChange={() => setMode(!lightMode)}
+                  checked={!lightMode}
+                ></ThemeSwitch>
+                <DarkModeParagraph>
+                  <b>Dark mode</b>
+                </DarkModeParagraph>
+              </SwitchContainer>
+            }
+          />
+          <ComponentView>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/projects" component={ProjectsPage} />
+            <Route exact path="/contact" component={ContactPage} />
+          </ComponentView>
+        </Router>
       </ScreenView>
       <Footer />
     </ThemeProvider>
@@ -57,11 +55,6 @@ const ScreenView = styled.div`
   width: 100%;
   min-height: 100vh;
 `;
-const BackgroundPicture = styled.main`
-  background-image: ${require("./Background.png")};
-  background-color: transparent;
-`;
-
 const ComponentView = styled.body`
   overflow: hidden;
   min-height: 100vh;

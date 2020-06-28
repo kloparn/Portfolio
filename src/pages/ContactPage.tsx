@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FaMailBulk } from "react-icons/fa";
 
 const ContactPage: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const ContactPage: React.FC = () => {
             navigator.clipboard.writeText("Adam97.live.com@live.com");
           }}
         >
-          Adam97.live.com@live.com
+          <FaMailBulk /> Adam97.live.com@live.com
         </FakeButton>
       </Paragraph>
     </Layout>
