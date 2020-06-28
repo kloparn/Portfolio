@@ -13,10 +13,10 @@ const ContactPage: React.FC = () => {
         <br />
         <FakeButton
           onClick={() => {
-            navigator.clipboard.writeText("Adam97.live.com@live.com");
+            navigator.clipboard.writeText("Adam.hakanson@hotmail.com");
           }}
         >
-          <FaMailBulk /> Adam97.live.com@live.com
+          <FaMailBulk /> Adam.hakanson@hotmail.com
         </FakeButton>
       </Paragraph>
     </Layout>

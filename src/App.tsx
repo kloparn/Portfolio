@@ -55,6 +55,7 @@ const ScreenView = styled.div`
   width: 100%;
   min-height: 100vh;
 `;
+
 const ComponentView = styled.body`
   overflow: hidden;
   min-height: 100vh;
