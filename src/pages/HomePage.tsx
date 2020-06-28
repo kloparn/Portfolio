@@ -32,7 +32,7 @@ const Layout = styled.main`
   background-image: url("background.png");
   background-size: cover;
   min-height: 80vh;
-  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
 `;
 
 const Name = styled.h1`

@@ -5,10 +5,10 @@ import { FaMailBulk } from "react-icons/fa";
 const ContactPage: React.FC = () => {
   return (
     <Layout>
-      <CustomImg src="email.jpg" alt="mail me"></CustomImg>
       <Paragraph>
         For any businesses or private companies who wants a job done, contact me
-        on my email. Simply press the link below to get the email copied to your
+        on my email.
+        <br /> Simply press the link below to get the email copied to your
         clipboard. <br /> Im looking forward to hear from you!
         <br />
         <FakeButton
@@ -29,17 +29,13 @@ const Layout = styled.main`
   justify-content: space-evenly;
   align-items: center;
   padding: 10vh;
+  background-image: url("email.jpg");
+  background-size: cover;
+  height: 80vh;
+  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
 
   @media (max-width: 1000px) {
     flex-direction: column;
-  }
-`;
-
-const CustomImg = styled.img`
-  width: 60%;
-  height: auto;
-  @media (max-width: 1000px) {
-    width: 100%;
   }
 `;
 
@@ -57,8 +53,9 @@ const FakeButton = styled.button`
   text-decoration: underline;
   border: none;
   outline: none;
-  background-color: ${(props) => props.theme.colors.main};
-  color: ${(props) => props.theme.colors.linkColor};
+  background-color: transparent;
+  color: darkblue;
+
   :active {
     color: red;
   }
