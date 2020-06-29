@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { CardFrontend } from "../components";
+import { Cards } from "../components";
 
 const AboutPage: React.FC = () => {
   return (
     <Layout>
-      <CardFrontend />
+      <Cards />
     </Layout>
   );
 };

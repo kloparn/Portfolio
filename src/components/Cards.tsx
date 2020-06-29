@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const CardFrontend = () => {
+const Cards = () => {
   const [userData, setUserData] = useState(Object);
   const [backData, setBackData] = useState(Object);
   const [frontData, setFrontData] = useState(Object);
@@ -41,6 +41,10 @@ const CardFrontend = () => {
           <div className="content">
             <h3>{frontData.name}</h3>
             <p>{frontData.information}</p>
+            {/* 
+            Currently this card has a little to much information in correlation to the user card, this in turn makes it 
+            a little bit taller in tigher screens
+            */}
           </div>
         </div>
       </Card>
@@ -90,8 +94,8 @@ const Card = styled.div`
   display: table-row;
   @media (max-width: 1000px) {
     display: inline-block;
-    padding: 20px;
+    justify-content: center;
   }
 `;
 
-export { CardFrontend };
+export { Cards };

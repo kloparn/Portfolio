@@ -44,9 +44,13 @@ code {
   opacity: 0.7;
 }
 
-.container {}
+.container {
+  opacity: 1;
+}
 
-.container .card {}
+.container .card {
+  opacity: 1;
+}
 
 .container .card .icon {
   position: absolute;
