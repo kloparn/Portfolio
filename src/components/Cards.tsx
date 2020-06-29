@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 const CardFrontend = () => {
   const [userData, setUserData] = useState(Object);
+  const [backData, setBackData] = useState(Object);
+  const [frontData, setFrontData] = useState(Object);
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -10,52 +12,14 @@ const CardFrontend = () => {
         "https://adamh-portfolio-backend.herokuapp.com/api/user"
       );
       userData = await userData.json();
+
       setUserData(userData);
-    };
-
-    fetchApi();
-  }, []);
-  return (
-    <CardHolder>
-      <CardHead>{userData.name}</CardHead>
-      <CardPicture src={userData.picture} alt="Picture of me"></CardPicture>
-      <CardBody>{userData.information}</CardBody>
-    </CardHolder>
-  );
-};
-
-const CardBackend = () => {
-  const [backData, setBackData] = useState(Object);
-
-  useEffect(() => {
-    const fetchApi = async () => {
       let backData = await fetch(
         "https://adamh-portfolio-backend.herokuapp.com/api/backend"
       );
       backData = await backData.json();
       setBackData(backData);
-    };
 
-    fetchApi();
-  }, []);
-  return (
-    <CardHolder>
-      <CardPicture
-        src={backData.picture}
-        alt="Backend picture to display what i use!"
-      ></CardPicture>
-      <CardHead>{backData.name}</CardHead>
-      <CardBody>{backData.information}</CardBody>
-      <CardFooter>{backData.framework}</CardFooter>
-    </CardHolder>
-  );
-};
-
-const CardAboutMe: React.FC = () => {
-  const [frontData, setFrontData] = useState(Object);
-
-  useEffect(() => {
-    const fetchApi = async () => {
       let frontData = await fetch(
         "https://adamh-portfolio-backend.herokuapp.com/api/frontend"
       );
@@ -66,39 +30,68 @@ const CardAboutMe: React.FC = () => {
     fetchApi();
   }, []);
   return (
-    <CardHolder>
-      <CardPicture
-        src={frontData.picture}
-        alt="Frontend picture displaying what i use"
-      ></CardPicture>
-      <CardHead>{frontData.name}</CardHead>
-      <CardBody>{frontData.information}</CardBody>
-      <CardFooter>{frontData.framework}</CardFooter>
-    </CardHolder>
+    <CardWrapper className="container">
+      <Card className="card">
+        <div className="face face1">
+          <div className="content">
+            <div className="icon"></div>
+          </div>
+        </div>
+        <div className="face face2">
+          <div className="content">
+            <h3>{frontData.name}</h3>
+            <p>{frontData.information}</p>
+          </div>
+        </div>
+      </Card>
+      <Card className="card">
+        <div className="face face1">
+          <div className="content">
+            <div className="icon"></div>
+          </div>
+        </div>
+        <div className="face face2">
+          <div className="content">
+            <h3>{userData.name}</h3>
+            <p>{userData.information}</p>
+          </div>
+        </div>
+      </Card>
+      <Card className="card">
+        <div className="face face1">
+          <div className="content">
+            <div className="icon"></div>
+          </div>
+        </div>
+        <div className="face face2">
+          <div className="content">
+            <h3>{backData.name}</h3>
+            <p>{backData.information}</p>
+            <footer>{backData.framework}</footer>
+          </div>
+        </div>
+      </Card>
+    </CardWrapper>
   );
 };
 
-const CardHolder = styled.div`
+const CardWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  @media (max-width: 1000px) {
+    display: table-column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const Card = styled.div`
   display: table-row;
-  justify-content: space-evenly;
-  align-items: center;
-  border: 1px solid ${(props) => props.theme.colors.text};
-  width: 30vh;
-  height: 45vh;
-  text-align: center;
+  @media (max-width: 1000px) {
+    display: inline-block;
+    padding: 20px;
+  }
 `;
 
-const CardHead = styled.h1`
-  padding: 2rem;
-`;
-
-const CardBody = styled.p``;
-
-const CardFooter = styled.footer``;
-
-const CardPicture = styled.img`
-  width: 20vh;
-  height: auto;
-`;
-
-export { CardFrontend, CardBackend, CardAboutMe };
+export { CardFrontend };

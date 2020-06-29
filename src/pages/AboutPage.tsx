@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { CardAboutMe, CardFrontend, CardBackend } from "../components";
+import { CardFrontend } from "../components";
 
 const AboutPage: React.FC = () => {
   return (
     <Layout>
-      <CardAboutMe />
       <CardFrontend />
-      <CardBackend />
     </Layout>
   );
 };

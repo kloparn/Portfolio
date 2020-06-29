@@ -1,3 +1,3 @@
 export { default as Footer } from "./Footer";
 export { default as Navbar } from "./Navbar";
-export { CardFrontend, CardBackend, CardAboutMe } from "./Cards";
+export { CardFrontend } from "./Cards";
