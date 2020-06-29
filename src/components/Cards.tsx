@@ -92,6 +92,7 @@ const CardWrapper = styled.div`
 
 const Card = styled.div`
   display: table-row;
+  padding: 1rem;
   @media (max-width: 1000px) {
     display: inline-block;
     justify-content: center;
