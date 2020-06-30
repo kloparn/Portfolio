@@ -20,7 +20,6 @@ const App = () => {
 
   return (
     <ThemeProvider theme={lightMode ? theme : darkTheme}>
-      {console.log(window.History)}
       <ScreenView>
         <Router>
           <Navbar
@@ -36,12 +35,10 @@ const App = () => {
               </SwitchContainer>
             }
           />
-          <ComponentView>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/projects" component={ProjectsPage} />
-            <Route exact path="/contact" component={ContactPage} />
-          </ComponentView>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/about" component={AboutPage} />
+          <Route exact path="/projects" component={ProjectsPage} />
+          <Route exact path="/contact" component={ContactPage} />
         </Router>
       </ScreenView>
       <Footer />
@@ -54,11 +51,7 @@ const ScreenView = styled.div`
   color: ${(props) => props.theme.colors.text};
   width: 100%;
   min-height: 100vh;
-`;
-
-const ComponentView = styled.body`
   overflow: hidden;
-  min-height: 100vh;
 `;
 
 const SwitchContainer = styled.div`

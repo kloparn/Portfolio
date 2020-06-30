@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
       <section>
         <Name>Adam Håkansson</Name>
         <Description>
-          I'm a swedish newly graduate front-end & back-end developer <br />
+          I'm a newly swedish graduate fullstack developer <br />
           Available for hire and or available for a full time job
         </Description>
         <ButtonSection>
@@ -31,8 +31,9 @@ const Layout = styled.main`
   padding-top: 30vh;
   background-image: url("background.png");
   background-size: cover;
+  color: white;
   min-height: 80vh;
-  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
+  text-shadow: 2px 2px black;
 `;
 
 const Name = styled.h1`

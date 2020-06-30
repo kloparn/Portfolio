@@ -41,6 +41,7 @@ const Cards = () => {
           <div className="content">
             <h3>{frontData.name}</h3>
             <p>{frontData.information}</p>
+            <footer>{frontData.framework}</footer>
             {/* 
             Currently this card has a little to much information in correlation to the user card, this in turn makes it 
             a little bit taller in tigher screens
@@ -83,7 +84,7 @@ const CardWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   width: 80%;
-  @media (max-width: 1000px) {
+  @media (max-width: 1150px) {
     display: table-column;
     align-items: center;
     justify-content: center;
@@ -93,7 +94,7 @@ const CardWrapper = styled.div`
 const Card = styled.div`
   display: table-row;
   padding: 1rem;
-  @media (max-width: 1000px) {
+  @media (max-width: 1150px) {
     display: inline-block;
     justify-content: center;
   }

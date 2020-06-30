@@ -34,10 +34,12 @@ code {
 
 #closed {
   transform: translateY(-170%);
+  z-index: 2;
 }
 
 #open {
   transform: translateY(-3%);
+  z-index: 2;
 }
 
 .selectedLink {
@@ -100,8 +102,8 @@ i {
 }
 
 .container .card .face {
-  width: 300px;
-  height: 200px;
+  width: 350px;
+  height: 250px;
   transition: 0.5s;
 }
 
@@ -112,7 +114,7 @@ i {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  transform: translateY(100px);
+  transform: translateY(150px);
 }
 
 .container .card:hover .face.face1 {
@@ -151,7 +153,6 @@ i {
 
 .container .card .face.face2 .content p {
   margin: 0;
-  padding: 0;
   text-align: center;
   color: #414141;
 }
@@ -163,4 +164,18 @@ i {
   font-size: 24px;
   text-align: center;
   color: #414141;
+}
+
+.container .card .face.face2 .content footer {
+  margin: 0 0 10px 0;
+  padding: 1rem;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  color: #414141;
+}
+
+.container .card .face.face2 .content a {
+  padding-top: 2rem;
+  text-align: center;
 }

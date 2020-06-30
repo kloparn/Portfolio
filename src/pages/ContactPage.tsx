@@ -32,7 +32,8 @@ const Layout = styled.main`
   background-image: url("email.jpg");
   background-size: cover;
   height: 80vh;
-  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
+  color: white;
+  text-shadow: 2px 2px black;
 
   @media (max-width: 1000px) {
     flex-direction: column;

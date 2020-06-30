@@ -9,5 +9,4 @@
 
 ## possible improvement changes
 
-- Make the pictures go under the nav bar a little bit.
-- Make the text with the background pictures easier to read?
+- make the background pictures transparent under the navbar( currently not even under the navbar )

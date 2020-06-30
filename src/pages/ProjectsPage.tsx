@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Projects } from "../components";
 
 const ProjectsPage: React.FC = () => {
-  return <Layout>Projects</Layout>;
+  return (
+    <Layout>
+      <Projects />
+    </Layout>
+  );
 };
 
 const Layout = styled.main`
@@ -10,6 +15,6 @@ const Layout = styled.main`
   justify-content: center;
   text-align: center;
   margin: auto;
-  padding: 30vh;
+  padding: 10vh;
 `;
 export default ProjectsPage;
