@@ -180,3 +180,8 @@ i {
   text-align: center;
   overflow-wrap: break-word;
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url("./fonts/Roboto-Light.ttf") format('truetype');
+}

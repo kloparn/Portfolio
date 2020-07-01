@@ -111,7 +111,7 @@ const LinkLogo = styled.a`
 `;
 
 const Logo = styled.h1`
-  font: 1em "Bookman";
+  font-family: "Roboto";
   font-size: 3rem;
   color: ${(props) => props.theme.colors.text};
   text-decoration: none;
