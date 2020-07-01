@@ -19,7 +19,7 @@ export const theme: DefaultTheme = {
     third: "grey",
     forth: "cyan",
     text: "#000000",
-    backgroundActive: "lightblue",
+    backgroundActive: "red",
     shadowColor: "white",
   },
 };

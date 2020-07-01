@@ -9,4 +9,3 @@
 ## possible improvement changes
 
 - make the background pictures transparent under the navbar( currently not even under the navbar )
-- Updating the navbar to look more like a proper navbar

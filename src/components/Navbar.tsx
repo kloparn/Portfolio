@@ -94,8 +94,9 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 0 0 0 4rem;
+  padding-left: 1rem;
   text-decoration: none;
+  width: 100%;
 
   @media (max-width: 1240px) {
     display: flex;
@@ -157,7 +158,7 @@ const NavItem = styled(NavLink)`
   text-align: center;
 
   :hover {
-    opacity: 0.7;
+    opacity: 0.5;
   }
   :active {
     color: ${(props) => props.theme.colors.backgroundActive};
