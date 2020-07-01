@@ -151,10 +151,8 @@ const NavItem = styled(NavLink)`
   padding: 8px 15px;
   text-decoration: none;
   font-weight: bold;
-  background-color: ${(props) => props.theme.colors.third};
   color: ${(props) => props.theme.colors.text};
   font-size: 2rem;
-  border: 1px solid ${(props) => props.theme.colors.text};
   width: 110%;
   text-align: center;
 
@@ -162,7 +160,7 @@ const NavItem = styled(NavLink)`
     opacity: 0.7;
   }
   :active {
-    background-color: ${(props) => props.theme.colors.backgroundActive};
+    color: ${(props) => props.theme.colors.backgroundActive};
   }
 `;
 
