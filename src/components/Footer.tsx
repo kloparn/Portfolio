@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   const currentYear = () => new Date().getFullYear();
   return (
     <CustomFoot>
-      <CustomP>Created by Adam Håkansson. @ {currentYear()}</CustomP>
+      <CustomP>Created by Adam Håkansson. © {currentYear()}</CustomP>
       <section>
         <Anchor href="https://www.facebook.com/adam97.live/" target="_blank">
           <FaFacebook />

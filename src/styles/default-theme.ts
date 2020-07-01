@@ -14,12 +14,12 @@ export const darkTheme: DefaultTheme = {
 
 export const theme: DefaultTheme = {
   colors: {
-    main: "#D7FDEC",
-    secondary: "#A9FBD7",
-    third: "#B2E4DB",
-    forth: "#B0C6CE",
+    main: "white",
+    secondary: "lightgrey",
+    third: "grey",
+    forth: "cyan",
     text: "#000000",
-    backgroundActive: "lightgreen",
+    backgroundActive: "lightblue",
     shadowColor: "white",
   },
 };

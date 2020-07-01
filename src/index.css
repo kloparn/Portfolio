@@ -178,4 +178,5 @@ i {
 .container .card .face.face2 .content a {
   padding-top: 2rem;
   text-align: center;
+  overflow-wrap: break-word;
 }

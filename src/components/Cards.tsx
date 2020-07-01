@@ -83,11 +83,9 @@ const Cards = () => {
 const CardWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 80%;
   @media (max-width: 1150px) {
     display: table-column;
-    align-items: center;
-    justify-content: center;
+    padding: 0;
   }
 `;
 
@@ -97,6 +95,8 @@ const Card = styled.div`
   @media (max-width: 1150px) {
     display: inline-block;
     justify-content: center;
+    transform: scale(0.8);
+    padding: 0;
   }
 `;
 
