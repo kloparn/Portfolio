@@ -76,8 +76,7 @@ const Projects = () => {
 
 const CardWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
-  @media (max-width: 1150px) {
+  @media (max-width: 1330px) {
     display: table-column;
     align-items: center;
     justify-content: center;
@@ -88,7 +87,7 @@ const CardWrapper = styled.div`
 const Card = styled.div`
   display: table-row;
   padding: 1rem;
-  @media (max-width: 1150px) {
+  @media (max-width: 1520px) {
     display: inline-block;
     justify-content: center;
     transform: scale(0.7);
