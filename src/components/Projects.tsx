@@ -75,11 +75,10 @@ const Projects = () => {
 };
 
 const CardWrapper = styled.div`
-  display: flex;
-  @media (max-width: 1330px) {
-    display: table-column;
-    align-items: center;
-    justify-content: center;
+  display: table-column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1150px) {
     padding: 0;
   }
 `;
@@ -87,9 +86,9 @@ const CardWrapper = styled.div`
 const Card = styled.div`
   display: table-row;
   padding: 1rem;
-  @media (max-width: 1520px) {
-    display: inline-block;
-    justify-content: center;
+  display: inline-block;
+  justify-content: center;
+  @media (max-width: 1170px) {
     transform: scale(0.7);
     font-size: 19px;
     padding: 0;

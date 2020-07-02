@@ -107,6 +107,7 @@ const Nav = styled.nav`
 
 const LinkLogo = styled.a`
   color: ${(props) => props.theme.colors.text};
+  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
   background-color: ${(props) => props.theme.colors.secondary};
   text-decoration: none;
 `;
@@ -120,6 +121,7 @@ const Logo = styled.h1`
 
 const SwitchBox = styled.div`
   padding: 0 0 0 1rem;
+  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
 `;
 
 const List = styled.li`
@@ -153,6 +155,7 @@ const NavItem = styled(NavLink)`
   text-decoration: none;
   font-weight: bold;
   color: ${(props) => props.theme.colors.text};
+  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
   font-size: 2rem;
   width: 110%;
   text-align: center;

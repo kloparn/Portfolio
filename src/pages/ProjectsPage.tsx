@@ -15,6 +15,5 @@ const Layout = styled.main`
   justify-content: center;
   text-align: center;
   margin: auto;
-  padding: 10vh;
 `;
 export default ProjectsPage;

@@ -58,6 +58,7 @@ const CustomButton = styled.button`
   text-align: center;
   color: ${(props) => props.theme.colors.text};
   background-color: ${(props) => props.theme.colors.secondary};
+  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
 
   :hover {
     opacity: 0.6;
