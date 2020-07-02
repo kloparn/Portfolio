@@ -8,15 +8,20 @@ const ContactPage: React.FC = () => {
       <Paragraph>
         For any businesses or private companies who wants a job done, contact me
         on my email.
-        <br /> Simply press the link below to get the email copied to your
-        clipboard. <br /> Im looking forward to hear from you!
+        <br /> Simply press the link below and send me a email, if a pop up does
+        not appear
+        <br /> then it will instead copy the mail to your clipboard!
+        <br /> Im looking forward to hear from you!
         <br />
         <FakeButton
           onClick={() => {
             navigator.clipboard.writeText("Adam.hakanson@hotmail.com");
           }}
         >
-          <FaMailBulk /> Adam.hakanson@hotmail.com
+          <FaMailBulk />
+          <a href="mailto:Adam.hakanson@hotmail.com?subject=Business%20Opportunity">
+            Adam.hakanson@hotmail.com
+          </a>
         </FakeButton>
       </Paragraph>
     </Layout>
