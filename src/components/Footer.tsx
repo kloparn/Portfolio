@@ -27,7 +27,6 @@ const Footer: React.FC = () => {
 
 const CustomP = styled.p`
   color: ${(props) => props.theme.colors.text};
-  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
 `;
 
 const CustomFoot = styled.footer`
