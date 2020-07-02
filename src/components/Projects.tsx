@@ -32,6 +32,14 @@ const Projects = () => {
     fetchGit();
   }, []);
 
+  const datetimeStringConverter = (time: Date) => {
+    const covertedTime =
+      time.toLocaleString().split("T")[0] +
+      " " +
+      time.toLocaleString().split("T")[1].split("Z")[0];
+    return covertedTime;
+  };
+
   return (
     <CardWrapper className="container">
       {git.map((repo) => {
@@ -44,13 +52,19 @@ const Projects = () => {
             </div>
             <div className="face face2">
               <div className="content">
-                <p>{repo.description}</p>
                 <p>
+                  Created at: {datetimeStringConverter(repo.created)}
+                  <br />
+                  Updated at: {datetimeStringConverter(repo.updated)}
+                </p>
+                <p>{repo.description}</p>
+                <p>Language: {repo.language} </p>
+                <footer>
                   Link:
                   <a href={repo.url} rel="noopener noreferrer" target="_blank">
                     {repo.url}
                   </a>
-                </p>
+                </footer>
               </div>
             </div>
           </Card>
