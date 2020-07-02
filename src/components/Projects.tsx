@@ -60,7 +60,6 @@ const Projects = () => {
                 <p>{repo.description}</p>
                 <p>Language: {repo.language} </p>
                 <footer>
-                  Link:
                   <a href={repo.url} rel="noopener noreferrer" target="_blank">
                     {repo.url}
                   </a>
