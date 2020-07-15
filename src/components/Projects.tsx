@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 interface gitRepo {
-  key: string;
+  id: string;
   title: string;
   description: string;
   url: string;
@@ -16,7 +16,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchGit = async () => {
       let repo = await fetch(
-        "https://adamh-portfolio-backend.herokuapp.com/api/gitRep"
+        "https://dotnet-core-backend.herokuapp.com/api/Github"
       );
 
       const data = await repo.json();
@@ -44,7 +44,7 @@ const Projects = () => {
     <CardWrapper className="container">
       {git.map((repo) => {
         return (
-          <Card className="card" key={repo.key}>
+          <Card className="card" key={repo.id}>
             <div className="face face1">
               <GitPicture>
                 <h1> {repo.title}</h1>

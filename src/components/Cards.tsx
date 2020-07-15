@@ -9,26 +9,30 @@ const Cards = () => {
   useEffect(() => {
     const fetchApi = async () => {
       let userData = await fetch(
-        "https://adamh-portfolio-backend.herokuapp.com/api/user"
+        "https://dotnet-core-backend.herokuapp.com/api/InformationItems/2"
       );
       userData = await userData.json();
 
       setUserData(userData);
       let backData = await fetch(
-        "https://adamh-portfolio-backend.herokuapp.com/api/backend"
+        "https://dotnet-core-backend.herokuapp.com/api/InformationItems/3"
       );
       backData = await backData.json();
       setBackData(backData);
 
       let frontData = await fetch(
-        "https://adamh-portfolio-backend.herokuapp.com/api/frontend"
+        "https://dotnet-core-backend.herokuapp.com/api/InformationItems/1"
       );
       frontData = await frontData.json();
+
       setFrontData(frontData);
     };
 
     fetchApi();
   }, []);
+
+  console.log(frontData);
+
   return (
     <CardWrapper className="container">
       <Card className="card">
@@ -41,7 +45,7 @@ const Cards = () => {
           <div className="content">
             <h3>{frontData.name}</h3>
             <p>{frontData.information}</p>
-            <footer>{frontData.framework}</footer>
+            <footer>{frontData.library}</footer>
             {/* 
             Currently this card has a little to much information in correlation to the user card, this in turn makes it 
             a little bit taller in tigher screens
