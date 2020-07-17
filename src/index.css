@@ -104,7 +104,7 @@ i {
 
 .container .card .face {
   width: 350px;
-  height: 250px;
+  height: 300px;
   transition: 0.5s;
 }
 
@@ -115,7 +115,7 @@ i {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  transform: translateY(150px);
+  transform: translateY(200px);
 }
 
 .container .card:hover .face.face1 {
@@ -171,7 +171,7 @@ i {
 .container .card .face.face2 .content footer {
   margin: 0 0 10px 0;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   color: #414141;
 }

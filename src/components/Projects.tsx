@@ -9,6 +9,7 @@ interface gitRepo {
   created: Date;
   updated: Date;
   language: string;
+  homepage: string;
 }
 
 const Projects = () => {
@@ -63,6 +64,15 @@ const Projects = () => {
                   <a href={repo.url} rel="noopener noreferrer" target="_blank">
                     {repo.url}
                   </a>
+                  <br />
+                  {repo.homepage === "null" ? null : "homepage: "} <br />
+                  <a
+                    href={repo.homepage === "null" ? "" : repo.homepage}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {repo.homepage === "null" ? null : repo.homepage}
+                  </a>
                 </footer>
               </div>
             </div>
@@ -87,11 +97,6 @@ const Card = styled.div`
   padding: 1rem;
   display: inline-block;
   justify-content: center;
-  @media (max-width: 1170px) {
-    transform: scale(0.7);
-    font-size: 19px;
-    padding: 0;
-  }
 `;
 
 const GitPicture = styled.div`
