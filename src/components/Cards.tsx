@@ -31,8 +31,6 @@ const Cards = () => {
     fetchApi();
   }, []);
 
-  console.log(frontData);
-
   return (
     <CardWrapper className="containerCustom">
       <Card className="card">

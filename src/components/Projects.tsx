@@ -13,8 +13,6 @@ interface gitRepo {
   homepage: string;
 }
 
-//https://dotnet-core-backend.herokuapp.com/api/Github
-
 const Projects = () => {
   const [git, setGit] = useState([] as gitRepo[]);
   const [retrieved, setRetrieved] = useState(false);
@@ -55,6 +53,7 @@ const Projects = () => {
                 padding: "1rem",
                 margin: "1rem",
               }}
+              key={repo.id}
             >
               <Card.Body>
                 <Card.Img variant="top" src="github-logo.png"></Card.Img>
@@ -72,7 +71,10 @@ const Projects = () => {
                 ) : (
                   <p>
                     Homepage: <br />
-                    <Card.Link href="#"> {repo.homepage}</Card.Link>
+                    <Card.Link href={repo.homepage} target="_blank">
+                      {" "}
+                      {repo.homepage}
+                    </Card.Link>
                   </p>
                 )}
               </Card.Body>
