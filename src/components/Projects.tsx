@@ -11,9 +11,10 @@ interface gitRepo {
   language: string;
   homepage: string;
 }
-
+//https://dotnet-core-backend.herokuapp.com/api/Github
 const Projects = () => {
   const [git, setGit] = useState([] as gitRepo[]);
+  const [retrieved, setRetrieved] = useState(false);
   useEffect(() => {
     const fetchGit = async () => {
       let repo = await fetch(
@@ -29,6 +30,7 @@ const Projects = () => {
       console.log(returnData);
 
       setGit(returnData);
+      setRetrieved(true);
     };
     fetchGit();
   }, []);
@@ -43,42 +45,48 @@ const Projects = () => {
 
   return (
     <CardWrapper className="container">
-      {git.map((repo) => {
-        return (
-          <Card className="card" key={repo.id}>
-            <div className="face face1">
-              <GitPicture>
-                <h1> {repo.title}</h1>
-              </GitPicture>
-            </div>
-            <div className="face face2">
-              <div className="content">
-                <p>
-                  Created at: {datetimeStringConverter(repo.created)}
-                  <br />
-                  Updated at: {datetimeStringConverter(repo.updated)}
-                </p>
-                <p>{repo.description}</p>
-                <p>Language: {repo.language} </p>
-                <footer>
-                  <a href={repo.url} rel="noopener noreferrer" target="_blank">
-                    {repo.url}
-                  </a>
-                  <br />
-                  {repo.homepage === "null" ? null : "homepage: "} <br />
-                  <a
-                    href={repo.homepage === "null" ? "" : repo.homepage}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {repo.homepage === "null" ? null : repo.homepage}
-                  </a>
-                </footer>
-              </div>
-            </div>
-          </Card>
-        );
-      })}
+      {!retrieved
+        ? "Retrieving Github repositories, wait a moment..."
+        : git.map((repo) => {
+            return (
+              <Card className="card" key={repo.id}>
+                <div className="face face1">
+                  <GitPicture>
+                    <h1> {repo.title}</h1>
+                  </GitPicture>
+                </div>
+                <div className="face face2">
+                  <div className="content">
+                    <p>
+                      Created at: {datetimeStringConverter(repo.created)}
+                      <br />
+                      Updated at: {datetimeStringConverter(repo.updated)}
+                    </p>
+                    <p>{repo.description}</p>
+                    <p>Language: {repo.language} </p>
+                    <footer>
+                      <a
+                        href={repo.url}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {repo.url}
+                      </a>
+                      <br />
+                      {repo.homepage === "null" ? null : "homepage: "} <br />
+                      <a
+                        href={repo.homepage === "null" ? "" : repo.homepage}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {repo.homepage === "null" ? null : repo.homepage}
+                      </a>
+                    </footer>
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
     </CardWrapper>
   );
 };
