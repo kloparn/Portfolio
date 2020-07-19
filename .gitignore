@@ -6,7 +6,7 @@
 .pnp.js
 
 # Do not ignore this file
-!*/node_modules/react-bootstrap/esm/index.d.ts
+!/node_modules/react-bootstrap/esm/index.d.ts
 
 # testing
 /coverage
