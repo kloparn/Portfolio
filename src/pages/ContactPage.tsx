@@ -33,10 +33,9 @@ const Layout = styled.main`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding: 10vh;
   background-image: url("email.jpg");
   background-size: cover;
-  height: 80vh;
+  min-height: 100vh;
   color: white;
   text-shadow: 2px 2px black;
 

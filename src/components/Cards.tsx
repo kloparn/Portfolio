@@ -34,7 +34,7 @@ const Cards = () => {
   console.log(frontData);
 
   return (
-    <CardWrapper className="container">
+    <CardWrapper className="containerCustom">
       <Card className="card">
         <div className="face face1">
           <div className="content">

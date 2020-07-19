@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme, darkTheme } from "./styles/default-theme";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ThemeSwitch from "react-switch";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Navbar, Footer } from "./components";
 import { HomePage, AboutPage, ProjectsPage, ContactPage } from "./pages";

@@ -32,7 +32,7 @@ const Layout = styled.main`
   background-image: url("background.png");
   background-size: cover;
   color: white;
-  min-height: 80vh;
+  min-height: 100vh;
   text-shadow: 2px 2px black;
 `;
 
