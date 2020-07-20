@@ -8,30 +8,6 @@ const Cards = () => {
   const [frontData, setFrontData] = useState(Object);
   const [retrieved, setRetrieved] = useState(false);
 
-  /* 
-  const fetchApi = async () => {
-      let userData = await fetch(
-        "https://dotnet-core-backend.herokuapp.com/api/InformationItems/2"
-      );
-      userData = await userData.json();
-
-      setUserData(userData);
-      let backData = await fetch(
-        "https://dotnet-core-backend.herokuapp.com/api/InformationItems/3"
-      );
-      backData = await backData.json();
-      setBackData(backData);
-
-      let frontData = await fetch(
-        "https://dotnet-core-backend.herokuapp.com/api/InformationItems/1"
-      );
-      frontData = await frontData.json();
-
-      setFrontData(frontData);
-      setRetrieved(true);
-    };
-  */
-
   useEffect(() => {
     const fetchApi = async () => {
       let userData = await fetch(
