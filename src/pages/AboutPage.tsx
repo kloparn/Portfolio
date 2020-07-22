@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { TitleChange as Title } from "../helpers";
 import { Cards } from "../components";
 
 const AboutPage: React.FC = () => {
+  Title("About");
+
   return (
     <Layout>
       <Cards />

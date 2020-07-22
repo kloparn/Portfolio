@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Navbar as BotNavBar, Nav as BotNav } from "react-bootstrap";
+import { TitleChange as Title } from "../helpers";
 import styled from "styled-components";
 
 const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
@@ -9,6 +10,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
       collapseOnSelect
       expand="lg"
       className={
+        // Simple turnery to check if the user has light mode on or not.
         Mode ? "navbar navbar-light bg-light" : "navbar navbar-dark bg-dark"
       }
     >
@@ -19,16 +21,24 @@ const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
         {/* This is to make the navItems centered */}
         <BotNav>
           <BotNav.Link>
-            <NavItem to="/">Home</NavItem>
+            <NavItem to="/" onClick={() => Title("Home")}>
+              Home
+            </NavItem>
           </BotNav.Link>
           <BotNav.Link>
-            <NavItem to="/about">About</NavItem>
+            <NavItem to="/about" onClick={() => Title("About")}>
+              About
+            </NavItem>
           </BotNav.Link>
           <BotNav.Link>
-            <NavItem to="/projects">Projects</NavItem>
+            <NavItem to="/projects" onClick={() => Title("Projects")}>
+              Projects
+            </NavItem>
           </BotNav.Link>
           <BotNav.Link>
-            <NavItem to="/contact">Contact</NavItem>
+            <NavItem to="/contact" onClick={() => Title("Contact")}>
+              Contact
+            </NavItem>
           </BotNav.Link>
         </BotNav>
         <BotNav className="mr-auto" />

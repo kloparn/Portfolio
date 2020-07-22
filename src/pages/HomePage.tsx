@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { TitleChange as Title } from "../helpers";
 
 const HomePage: React.FC = () => {
+  Title("Home");
+
   return (
     <Layout>
       <section>
@@ -12,10 +15,10 @@ const HomePage: React.FC = () => {
           Available for hire and or available for a full time job
         </Description>
         <ButtonSection>
-          <Link to="/projects">
+          <Link to="/projects" onClick={() => Title("Projects")}>
             <CustomButton>To my projects</CustomButton>
           </Link>
-          <Link to="/contact">
+          <Link to="/contact" onClick={() => Title("Contact")}>
             <CustomButton>Contact me</CustomButton>
           </Link>
         </ButtonSection>

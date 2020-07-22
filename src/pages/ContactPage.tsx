@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { FaMailBulk } from "react-icons/fa";
+import { TitleChange as Title } from "../helpers";
 
 const ContactPage: React.FC = () => {
+  Title("Contact");
+
   return (
     <Layout>
       <Paragraph>
