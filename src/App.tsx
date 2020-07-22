@@ -26,13 +26,13 @@ const App = () => {
           <Navbar
             CustomSwitch={
               <SwitchContainer>
+                <DarkModeParagraph>
+                  <b>{!lightMode ? "Dark mode" : "Light mode"}</b>
+                </DarkModeParagraph>
                 <ThemeSwitch
                   onChange={() => setMode(!lightMode)}
                   checked={!lightMode}
                 ></ThemeSwitch>
-                <DarkModeParagraph>
-                  <b>Dark mode</b>
-                </DarkModeParagraph>
               </SwitchContainer>
             }
             Mode={lightMode}

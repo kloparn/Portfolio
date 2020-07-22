@@ -63,14 +63,6 @@ const Logo = styled(BotNavBar.Brand)`
   font-size: 2.5rem;
 `;
 
-const SwitchBox = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: table-column;
-  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
-`;
-
 const NavItem = styled(NavLink)`
   display: block;
   text-decoration: none;
@@ -86,6 +78,14 @@ const NavItem = styled(NavLink)`
   :active {
     color: ${(props) => props.theme.colors.backgroundActive};
   }
+`;
+
+const SwitchBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: table-column;
+  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
 `;
 
 export default Navbar;
