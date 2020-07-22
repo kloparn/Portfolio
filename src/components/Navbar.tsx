@@ -1,152 +1,63 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+import { Navbar as BotNavBar, Nav as BotNav } from "react-bootstrap";
 import styled from "styled-components";
 
-const Navbar: React.FC<Props> = ({ CustomSwitch }) => {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  const [openBurger, setOpen] = useState(
-    localStorage.getItem("openBurger") == null
-      ? false
-      : JSON.parse(localStorage.getItem("openBurger")!)
-  );
-
-  useEffect(() => {
-    localStorage.setItem("openBurger", JSON.stringify(openBurger));
-
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-  }, [openBurger]);
-
+const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
   return (
-    <Nav>
-      <Logo>
-        <LinkLogo href="/"> Adams Portfolio </LinkLogo>
-      </Logo>
-      <ListWrapper id={width > 1240 ? "open" : !openBurger ? "closed" : "open"}>
-        <List>
-          <NavItem
-            to="/"
-            onClick={() => {
-              setOpen(!openBurger);
-              document.title = "Home | Portfolio";
-            }}
-          >
-            Home
-          </NavItem>
-        </List>
-        <List>
-          <NavItem
-            to="/about"
-            activeClassName="selectedLink"
-            onClick={() => {
-              setOpen(!openBurger);
-              document.title = "About | Portfolio";
-            }}
-          >
-            About
-          </NavItem>
-        </List>
-        <List>
-          <NavItem
-            to="/projects"
-            activeClassName="selectedLink"
-            onClick={() => {
-              setOpen(!openBurger);
-              document.title = "Projects | Portfolio";
-            }}
-          >
-            Projects
-          </NavItem>
-        </List>
-        <List>
-          <NavItem
-            to="/contact"
-            activeClassName="selectedLink"
-            onClick={() => {
-              setOpen(!openBurger);
-              document.title = "Contact | Portfolio";
-            }}
-          >
-            Contact
-          </NavItem>
-        </List>
-        <SwitchBox>{CustomSwitch}</SwitchBox>
-      </ListWrapper>
-      <StyledBurger onClick={() => setOpen(!openBurger)}>
-        <div className={openBurger ? "lineOne" : ""} />
-        <div className={openBurger ? "lineTwo" : ""} />
-        <div className={openBurger ? "lineThree" : ""} />
-      </StyledBurger>
-    </Nav>
+    <BootstrapNavbar
+      collapseOnSelect
+      expand="lg"
+      className={
+        Mode ? "navbar navbar-light bg-light" : "navbar navbar-dark bg-dark"
+      }
+    >
+      <Logo href="/">Adam Håkansson</Logo>
+      <BotNavBar.Toggle aria-controls="responsive-navbar-nav" />
+      <BotNavBar.Collapse id="responsive-navbar-nav">
+        <BotNav className="mr-auto" />
+        {/* This is to make the navItems centered */}
+        <BotNav>
+          <BotNav.Link>
+            <NavItem to="/">Home</NavItem>
+          </BotNav.Link>
+          <BotNav.Link>
+            <NavItem to="/about">About</NavItem>
+          </BotNav.Link>
+          <BotNav.Link>
+            <NavItem to="/projects">Projects</NavItem>
+          </BotNav.Link>
+          <BotNav.Link>
+            <NavItem to="/contact">Contact</NavItem>
+          </BotNav.Link>
+        </BotNav>
+        <BotNav className="mr-auto" />
+        <BotNav className="d-flex justify-content-end">
+          <SwitchBox>{CustomSwitch} </SwitchBox>
+        </BotNav>
+        {/* This is to make the navItems centered */}
+      </BotNavBar.Collapse>
+    </BootstrapNavbar>
   );
 };
 
 type Props = {
   CustomSwitch: JSX.Element;
+  Mode: Boolean;
 };
 
-const Nav = styled.nav`
-  background-color: ${(props) => props.theme.colors.secondary};
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding-left: 1rem;
-  text-decoration: none;
-  width: 100%;
-
-  @media (max-width: 1240px) {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-  }
+const BootstrapNavbar = styled(BotNavBar)`
+  font-size: 1.5rem;
+  background-color: ${(props) => props.theme.colors.main};
 `;
 
-const LinkLogo = styled.a`
-  color: ${(props) => props.theme.colors.text};
-  text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
-  background-color: ${(props) => props.theme.colors.secondary};
-  text-decoration: none;
-`;
-
-const Logo = styled.h1`
+const Logo = styled(BotNavBar.Brand)`
   font-family: "Roboto";
-  font-size: 3rem;
-  color: ${(props) => props.theme.colors.text};
-  text-decoration: none;
+  font-size: 2rem;
 `;
 
 const SwitchBox = styled.div`
-  padding: 0 0 0 1rem;
   text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
-`;
-
-const List = styled.li`
-  padding: 2rem;
-`;
-
-const ListWrapper = styled.ul`
-  background-color: ${(props) => props.theme.colors.secondary};
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-  @media (max-width: 1240px) {
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 70vh;
-    padding-top: 1.5rem;
-    padding-right: 1.5rem;
-    padding-left: 0;
-    transition: transform 0.3s ease-in-out;
-  }
 `;
 
 const NavItem = styled(NavLink)`
@@ -168,29 +79,4 @@ const NavItem = styled(NavLink)`
   }
 `;
 
-const StyledBurger = styled.div`
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-  z-index: 20;
-  visibility: hidden;
-
-  @media (max-width: 1240px) {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    visibility: visible;
-  }
-
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background-color: ${(props) => props.theme.colors.text};
-    border-radius: 10px;
-    transform-origin: 1px;
-    transition: all 0.3s linear;
-  }
-`;
 export default Navbar;

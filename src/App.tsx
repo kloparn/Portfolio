@@ -35,6 +35,7 @@ const App = () => {
                 </DarkModeParagraph>
               </SwitchContainer>
             }
+            Mode={lightMode}
           />
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={AboutPage} />
@@ -50,14 +51,15 @@ const App = () => {
 const ScreenView = styled.div`
   background-color: ${(props) => props.theme.colors.main};
   color: ${(props) => props.theme.colors.text};
-  width: 100%;
   min-height: 100vh;
   overflow: hidden;
 `;
 
 const SwitchContainer = styled.div`
   color: ${(props) => props.theme.colors.text};
-  padding-left: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 const DarkModeParagraph = styled.p`
   font-display: bold;
