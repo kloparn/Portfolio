@@ -17,9 +17,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
       <Logo href="/">Adam Håkansson</Logo>
       <BotNavBar.Toggle aria-controls="responsive-navbar-nav" />
       <BotNavBar.Collapse id="responsive-navbar-nav">
-        <BotNav className="mr-auto" />
-        {/* This is to make the navItems centered */}
-        <BotNav>
+        <BotNav className="mr-auto">
           <BotNav.Link>
             <NavItem to="/" onClick={() => Title("Home")}>
               Home
@@ -41,11 +39,9 @@ const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
             </NavItem>
           </BotNav.Link>
         </BotNav>
-        <BotNav className="mr-auto" />
         <BotNav className="d-flex justify-content-end">
           <SwitchBox>{CustomSwitch} </SwitchBox>
         </BotNav>
-        {/* This is to make the navItems centered */}
       </BotNavBar.Collapse>
     </BootstrapNavbar>
   );
@@ -63,7 +59,8 @@ const BootstrapNavbar = styled(BotNavBar)`
 
 const Logo = styled(BotNavBar.Brand)`
   font-family: "Roboto";
-  font-size: 2rem;
+  padding-right: 8vh;
+  font-size: 2.5rem;
 `;
 
 const SwitchBox = styled.div`
