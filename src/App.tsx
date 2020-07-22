@@ -56,10 +56,11 @@ const ScreenView = styled.div`
 `;
 
 const SwitchContainer = styled.div`
-  color: ${(props) => props.theme.colors.text};
   display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
+  color: ${(props) => props.theme.colors.text};
 `;
 const DarkModeParagraph = styled.p`
   font-display: bold;

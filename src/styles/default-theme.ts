@@ -16,8 +16,8 @@ export const theme: DefaultTheme = {
   colors: {
     main: "white",
     secondary: "lightgrey",
-    third: "grey",
-    forth: "cyan",
+    third: "#f8f9fa",
+    forth: "light-blue",
     text: "#000000",
     backgroundActive: "red",
     shadowColor: "white",

@@ -67,18 +67,20 @@ const Logo = styled(BotNavBar.Brand)`
 `;
 
 const SwitchBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: table-column;
   text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
 `;
 
 const NavItem = styled(NavLink)`
   display: block;
-  padding: 8px 15px;
   text-decoration: none;
   font-weight: bold;
   color: ${(props) => props.theme.colors.text};
   text-shadow: 2px 2px ${(props) => props.theme.colors.shadowColor};
   font-size: 2rem;
-  width: 110%;
   text-align: center;
 
   :hover {
