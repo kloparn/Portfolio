@@ -36,7 +36,7 @@ const Layout = styled.main`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background-image: url("email.jpg");
+  background-image: url("contact-exp.png");
   background-size: cover;
   min-height: 100vh;
   color: white;

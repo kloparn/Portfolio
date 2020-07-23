@@ -61,6 +61,10 @@ const Logo = styled(BotNavBar.Brand)`
   font-family: "Roboto";
   padding-right: 8vh;
   font-size: 2.5rem;
+  @media (max-width: 550px) {
+    font-size: 1.7rem;
+    padding-right: 0;
+  }
 `;
 
 const NavItem = styled(NavLink)`

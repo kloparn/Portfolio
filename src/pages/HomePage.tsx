@@ -31,8 +31,8 @@ const Layout = styled.main`
   display: flex;
   justify-content: center;
   text-align: center;
-  padding-top: 30vh;
-  background-image: url("background.png");
+  padding-top: 22vh;
+  background-image: url("background-exp.png");
   background-size: cover;
   color: white;
   min-height: 100vh;
