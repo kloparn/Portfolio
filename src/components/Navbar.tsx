@@ -17,27 +17,36 @@ const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
       <Logo href="/">Adam Håkansson</Logo>
       <BotNavBar.Toggle aria-controls="responsive-navbar-nav" />
       <BotNavBar.Collapse id="responsive-navbar-nav">
+        <BotNav className="mr-auto"></BotNav>
         <BotNav className="mr-auto">
-          <BotNav.Link>
-            <NavItem to="/" onClick={() => Title("Home")}>
-              Home
-            </NavItem>
-          </BotNav.Link>
-          <BotNav.Link>
-            <NavItem to="/about" onClick={() => Title("About")}>
-              About
-            </NavItem>
-          </BotNav.Link>
-          <BotNav.Link>
-            <NavItem to="/projects" onClick={() => Title("Projects")}>
-              Projects
-            </NavItem>
-          </BotNav.Link>
-          <BotNav.Link>
-            <NavItem to="/contact" onClick={() => Title("Contact")}>
-              Contact
-            </NavItem>
-          </BotNav.Link>
+          <NavBarItemContainer>
+            <BotNav.Link>
+              <NavItem to="/" onClick={() => Title("Home")}>
+                Home
+              </NavItem>
+            </BotNav.Link>
+          </NavBarItemContainer>
+          <NavBarItemContainer>
+            <BotNav.Link>
+              <NavItem to="/about" onClick={() => Title("About")}>
+                About
+              </NavItem>
+            </BotNav.Link>
+          </NavBarItemContainer>
+          <NavBarItemContainer>
+            <BotNav.Link>
+              <NavItem to="/projects" onClick={() => Title("Projects")}>
+                Projects
+              </NavItem>
+            </BotNav.Link>
+          </NavBarItemContainer>
+          <NavBarItemContainer>
+            <BotNav.Link>
+              <NavItem to="/contact" onClick={() => Title("Contact")}>
+                Contact
+              </NavItem>
+            </BotNav.Link>
+          </NavBarItemContainer>
         </BotNav>
         <BotNav className="d-flex justify-content-end">
           <SwitchBox>{CustomSwitch} </SwitchBox>
@@ -59,10 +68,27 @@ const BootstrapNavbar = styled(BotNavBar)`
 
 const Logo = styled(BotNavBar.Brand)`
   font-family: "Roboto";
-  padding-right: 8vh;
   font-size: 2.5rem;
   @media (max-width: 550px) {
     font-size: 1.7rem;
+  }
+`;
+
+const NavBarItemContainer = styled.div`
+  padding-left: 3vh;
+  padding-right: 3vh;
+  overflow: hidden;
+  cursor: auto;
+  @media (max-width: 1220px) {
+    padding-left: 2vh;
+    padding-right: 2vh;
+  }
+  @media (max-width: 1070px) {
+    padding-left: 1vh;
+    padding-right: 1vh;
+  }
+  @media (max-width: 1000px) {
+    padding-left: 0;
     padding-right: 0;
   }
 `;

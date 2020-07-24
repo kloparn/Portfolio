@@ -8,18 +8,20 @@ const Footer: React.FC = () => {
     <CustomFoot>
       <CustomP>Created by Adam Håkansson. © {currentYear()}</CustomP>
       <section>
-        <Anchor href="https://www.facebook.com/adam97.live/" target="_blank">
-          <FaFacebook />
-        </Anchor>
-        <Anchor href="https://github.com/kloparn" target="_blank">
-          <FaGit />
-        </Anchor>
-        <Anchor
-          href="https://www.linkedin.com/in/adam-h%C3%A5kansson-15942313a/"
-          target="_blank"
-        >
-          <FaLinkedin />
-        </Anchor>
+        <AnchorArea>
+          <Anchor href="https://www.facebook.com/adam97.live/" target="_blank">
+            <FaFacebook />
+          </Anchor>
+          <Anchor href="https://github.com/kloparn" target="_blank">
+            <FaGit />
+          </Anchor>
+          <Anchor
+            href="https://www.linkedin.com/in/adam-h%C3%A5kansson-15942313a/"
+            target="_blank"
+          >
+            <FaLinkedin />
+          </Anchor>
+        </AnchorArea>
       </section>
     </CustomFoot>
   );
@@ -39,8 +41,16 @@ const CustomFoot = styled.footer`
   padding: 2rem;
 `;
 
+const AnchorArea = styled.div`
+  width: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: auto;
+`;
+
 const Anchor = styled.a`
-  padding: 1rem;
+  line-height: 0.5em;
   font-size: 2rem;
   color: ${(props) => props.theme.colors.forth};
 `;

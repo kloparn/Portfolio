@@ -42,6 +42,7 @@ const Projects = () => {
           <Spinner animation="border" role="status">
             <span className="sr-only">Loading...</span>
           </Spinner>
+          <h2>Loading projects from api...</h2>
         </Information>
       ) : (
         git.map((repo) => {

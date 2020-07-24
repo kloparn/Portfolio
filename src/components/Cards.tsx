@@ -48,6 +48,7 @@ const Cards = () => {
               <Spinner animation="border" role="status">
                 <span className="sr-only">Loading...</span>
               </Spinner>
+              <p>Loading data from api...</p>
             </Information>
           ) : (
             <div className="content">
@@ -70,6 +71,7 @@ const Cards = () => {
               <Spinner animation="border" role="status">
                 <span className="sr-only">Loading...</span>
               </Spinner>
+              <p>Loading data from api...</p>
             </Information>
           ) : (
             <div className="content">
@@ -91,6 +93,7 @@ const Cards = () => {
               <Spinner animation="border" role="status">
                 <span className="sr-only">Loading...</span>
               </Spinner>
+              <p>Loading data from api...</p>
             </Information>
           ) : (
             <div className="content">
