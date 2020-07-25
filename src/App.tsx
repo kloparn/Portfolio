@@ -8,6 +8,7 @@ import "./App.css";
 import { Navbar, Footer } from "./components";
 import { HomePage, AboutPage, ProjectsPage, ContactPage } from "./pages";
 import { ScrollUp } from "./helpers";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const App = () => {
   const [currentHeight, setCurrentHeight] = useState(window.pageYOffset);
@@ -34,7 +35,11 @@ const App = () => {
             CustomSwitch={
               <SwitchContainer>
                 <DarkModeParagraph>
-                  <b>Dark mode</b>
+                  {lightMode ? (
+                    <FaSun className="light"></FaSun>
+                  ) : (
+                    <FaMoon className="dark"></FaMoon>
+                  )}
                 </DarkModeParagraph>
                 <ThemeSwitch
                   onChange={() => setMode(!lightMode)}

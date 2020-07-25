@@ -190,3 +190,21 @@ i {
   font-family: 'Roboto';
   src: local('Roboto'), url("./fonts/Roboto-Light.ttf") format('truetype');
 }
+
+.light {
+  background-color: transparent;
+  color: black;
+  font-size: 3rem;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.dark {
+  background-color: white;
+  color: black;
+  font-size: 3rem;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
