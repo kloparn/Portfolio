@@ -13,6 +13,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
         // Simple turnery to check if the user has light mode on or not.
         Mode ? "navbar navbar-light bg-light" : "navbar navbar-dark bg-dark"
       }
+      id="navbar-ref"
     >
       <Logo href="/">Adam Håkansson</Logo>
       <BotNavBar.Toggle aria-controls="responsive-navbar-nav" />

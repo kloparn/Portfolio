@@ -67,6 +67,9 @@ const FakeButton = styled.button`
   :active {
     color: red;
   }
+  :focus {
+    outline: none;
+  }
 `;
 
 export default ContactPage;

@@ -7,8 +7,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Navbar, Footer } from "./components";
 import { HomePage, AboutPage, ProjectsPage, ContactPage } from "./pages";
+import { ScrollUp } from "./helpers";
 
 const App = () => {
+  const [currentHeight, setCurrentHeight] = useState(window.pageYOffset);
   const [lightMode, setMode] = useState(
     localStorage.getItem("lightMode") == null
       ? false
@@ -17,7 +19,12 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem("lightMode", JSON.stringify(lightMode));
+    window.addEventListener("scroll", updateCurrentHeight);
   }, [lightMode]);
+
+  const updateCurrentHeight = () => {
+    setCurrentHeight(window.pageYOffset);
+  };
 
   return (
     <ThemeProvider theme={lightMode ? theme : darkTheme}>
@@ -43,6 +50,15 @@ const App = () => {
           <Route exact path="/contact" component={ContactPage} />
         </Router>
       </ScreenView>
+      {currentHeight < 500 ? (
+        ""
+      ) : (
+        <ButtonContainer>
+          <ScrollUpButton onClick={() => ScrollUp(document)}>
+            Scroll up
+          </ScrollUpButton>
+        </ButtonContainer>
+      )}
       <Footer />
     </ThemeProvider>
   );
@@ -64,6 +80,23 @@ const SwitchContainer = styled.div`
 `;
 const DarkModeParagraph = styled.p`
   font-display: bold;
+`;
+
+const ButtonContainer = styled.div`
+  flex: 1;
+  justify-content: flex-end;
+`;
+
+const ScrollUpButton = styled.button`
+  color: ${(props) => props.theme.colors.text};
+  position: absolute;
+  background-color: transparent;
+  right: 10px;
+  border-width: 0.3rem;
+  border-radius: 20px;
+  :focus {
+    outline: none;
+  }
 `;
 
 export default App;
