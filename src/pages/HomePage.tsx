@@ -32,7 +32,12 @@ const Layout = styled.main`
   justify-content: center;
   text-align: center;
   padding-top: 22vh;
-  background-image: url("background-exp.png");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.88)
+    ),
+    url("background-exp.png");
   background-size: cover;
   color: white;
   min-height: 100vh;
@@ -40,7 +45,6 @@ const Layout = styled.main`
 `;
 
 const Name = styled.h1`
-  font: 1em "gill sans, sans-serif";
   font-size: 3rem;
 `;
 

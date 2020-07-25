@@ -65,6 +65,7 @@ const App = () => {
 };
 
 const ScreenView = styled.div`
+  font-family: "Roboto";
   background-color: ${(props) => props.theme.colors.main};
   color: ${(props) => props.theme.colors.text};
   min-height: 100vh;

@@ -36,7 +36,12 @@ const Layout = styled.main`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background-image: url("contact-exp.png");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.88)
+    ),
+    url("contact-exp.png");
   background-size: cover;
   min-height: 100vh;
   color: white;
