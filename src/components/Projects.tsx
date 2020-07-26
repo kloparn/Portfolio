@@ -35,6 +35,37 @@ const Projects = () => {
     fetchGit();
   }, []);
 
+  const formatDate = (time: Date) => {
+    let str = "";
+    console.log(time.getTime());
+    time.getMonth() < 1
+      ? (str += "")
+      : time.getMonth()
+      ? (str += `${time.getMonth()} Month `)
+      : (str += `${time.getMonth()} Months `);
+    time.getDay() < 1
+      ? (str += "")
+      : time.getDay() === 1
+      ? (str += `${time.getDay()} Day `)
+      : (str += `${time.getDay()} days `);
+    time.getHours() < 1
+      ? (str += "")
+      : time.getHours() === 1
+      ? (str += `${time.getHours()} Hour `)
+      : (str += `${time.getHours()} Hours `);
+    time.getMinutes() < 1
+      ? (str += "")
+      : time.getMinutes() === 1
+      ? (str += `${time.getMinutes()} Minute `)
+      : (str += `${time.getMinutes()} Minutes `);
+    time.getSeconds() < 1
+      ? (str += "")
+      : time.getSeconds() === 1
+      ? (str += `${time.getSeconds()} Second `)
+      : (str += `${time.getSeconds()} Seconds `);
+    return (str += "Ago");
+  };
+
   return (
     <CardWrapper>
       {!retrieved ? (
@@ -82,7 +113,11 @@ const Projects = () => {
               <Card.Footer>
                 Last updated: <br />
                 <small className="text-muted">
-                  {new Date(new Date(repo.updated).getTime()).toDateString()}
+                  {formatDate(
+                    new Date(
+                      new Date().getTime() - new Date(repo.updated).getTime()
+                    )
+                  )}
                 </small>
               </Card.Footer>
             </Card>
