@@ -39,6 +39,7 @@ const CustomFoot = styled.footer`
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  transition: all 0.25s linear;
 `;
 
 const AnchorArea = styled.div`

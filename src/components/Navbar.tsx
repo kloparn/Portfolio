@@ -93,6 +93,7 @@ type Props = {
 const BootstrapNavbar = styled(BotNavBar)`
   font-size: 1.5rem;
   background-color: ${(props) => props.theme.colors.main};
+  transition: all 0.25s linear;
 `;
 
 const Logo = styled(BotNavBar.Brand)`

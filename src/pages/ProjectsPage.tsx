@@ -18,5 +18,6 @@ const Layout = styled.main`
   justify-content: center;
   text-align: center;
   margin: auto;
+  transition: all 0.25s linear;
 `;
 export default ProjectsPage;
