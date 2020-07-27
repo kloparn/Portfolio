@@ -34,16 +34,12 @@ const App = () => {
           <Navbar
             CustomSwitch={
               <SwitchContainer>
-                <DarkModeParagraph>
-                  {lightMode ? (
-                    <FaSun className="light"></FaSun>
-                  ) : (
-                    <FaMoon className="dark"></FaMoon>
-                  )}
-                </DarkModeParagraph>
                 <ThemeSwitch
                   onChange={() => setMode(!lightMode)}
                   checked={!lightMode}
+                  onColor="#000000"
+                  uncheckedIcon={<FaSun id="switch-picture" />}
+                  checkedIcon={<FaMoon id="switch-picture" />}
                 ></ThemeSwitch>
               </SwitchContainer>
             }
@@ -84,9 +80,6 @@ const SwitchContainer = styled.div`
   align-items: center;
   justify-content: center;
   color: ${(props) => props.theme.colors.text};
-`;
-const DarkModeParagraph = styled.p`
-  font-display: bold;
 `;
 
 const ButtonContainer = styled.div`

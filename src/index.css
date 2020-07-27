@@ -208,3 +208,12 @@ i {
   border: 1px solid white;
   border-radius: 50%;
 }
+
+#switch-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  padding-left: 4px;
+  transition: all 0.2s linear;
+}
