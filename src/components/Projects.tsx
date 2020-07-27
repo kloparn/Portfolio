@@ -47,7 +47,7 @@ const Projects = () => {
       ) : (
         git.map((repo) => {
           return (
-            <Card
+            <CustomCard
               style={{
                 width: "18rem",
                 backgroundColor: "transparent",
@@ -85,7 +85,7 @@ const Projects = () => {
                   {new Date(repo.updated).toLocaleDateString()}
                 </small>
               </Card.Footer>
-            </Card>
+            </CustomCard>
           );
         })
       )}
@@ -98,6 +98,15 @@ const CardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+const CustomCard = styled(Card)`
+  transition: 0.7s;
+  :hover {
+    transform: scale(1.07);
+    transition: all 0.3s linear;
+    border-color: ${(props) => props.theme.colors.text};
+  }
 `;
 
 const Information = styled.div`
