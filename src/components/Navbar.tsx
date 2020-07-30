@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Navbar as BotNavBar, Nav as BotNav } from "react-bootstrap";
-import { TitleChange as Title, NavBarScrollDown } from "../helpers";
 import styled from "styled-components";
 
 const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
@@ -14,6 +13,7 @@ const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
         Mode ? "navbar navbar-light bg-light" : "navbar navbar-dark bg-dark"
       }
       id="navbar-ref"
+      fixed="top"
     >
       <Logo href="/">Adam Håkansson</Logo>
       <BotNavBar.Toggle aria-controls="responsive-navbar-nav" />
@@ -22,58 +22,22 @@ const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
         <BotNav className="mr-auto">
           <NavBarItemContainer>
             <BotNav.Link>
-              <NavItem
-                to="/"
-                onClick={() => {
-                  Title("Home");
-                  if (window.innerWidth > 991) {
-                  } else NavBarScrollDown();
-                }}
-              >
-                Home
-              </NavItem>
+              <NavItem to="/">Home</NavItem>
             </BotNav.Link>
           </NavBarItemContainer>
           <NavBarItemContainer>
             <BotNav.Link>
-              <NavItem
-                to="/about"
-                onClick={() => {
-                  Title("About");
-                  if (window.innerWidth > 991) {
-                  } else NavBarScrollDown();
-                }}
-              >
-                About
-              </NavItem>
+              <NavItem to="/about">About</NavItem>
             </BotNav.Link>
           </NavBarItemContainer>
           <NavBarItemContainer>
             <BotNav.Link>
-              <NavItem
-                to="/projects"
-                onClick={() => {
-                  Title("Projects");
-                  if (window.innerWidth > 991) {
-                  } else NavBarScrollDown();
-                }}
-              >
-                Projects
-              </NavItem>
+              <NavItem to="/projects">Projects</NavItem>
             </BotNav.Link>
           </NavBarItemContainer>
           <NavBarItemContainer>
             <BotNav.Link>
-              <NavItem
-                to="/contact"
-                onClick={() => {
-                  Title("Contact");
-                  if (window.innerWidth > 991) {
-                  } else NavBarScrollDown();
-                }}
-              >
-                Contact
-              </NavItem>
+              <NavItem to="/contact">Contact</NavItem>
             </BotNav.Link>
           </NavBarItemContainer>
         </BotNav>

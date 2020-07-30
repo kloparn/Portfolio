@@ -19,5 +19,6 @@ const Layout = styled.main`
   text-align: center;
   margin: auto;
   transition: all 0.25s linear;
+  padding-top: 10vh;
 `;
 export default ProjectsPage;

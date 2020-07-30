@@ -29,6 +29,7 @@ const Layout = styled.section`
   justify-content: space-evenly;
   align-items: center;
   transition: all 0.25s linear;
+  padding-top: 10vh;
 
   @media (max-width: 1000px) {
     display: flex;

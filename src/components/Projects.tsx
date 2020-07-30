@@ -101,10 +101,10 @@ const CardWrapper = styled.div`
 `;
 
 const CustomCard = styled(Card)`
-  transition: 0.7s;
+  transition: 0.2s;
   :hover {
     transform: scale(1.07);
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
     border-color: ${(props) => props.theme.colors.text};
   }
 `;

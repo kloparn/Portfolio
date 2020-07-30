@@ -31,7 +31,7 @@ const Layout = styled.main`
   display: flex;
   justify-content: center;
   text-align: center;
-  padding-top: 22vh;
+  padding-top: 35vh;
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.6),
