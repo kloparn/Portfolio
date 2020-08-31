@@ -40,6 +40,12 @@ const Navbar: React.FC<Props> = ({ CustomSwitch, Mode }) => {
               <NavItem to="/contact">Contact</NavItem>
             </BotNav.Link>
           </NavBarItemContainer>
+          <NavBarItemContainerLink>
+            {/* eslint-disable-next-line react/jsx-no-target-blank */}
+            <a href="https://portfolio-vue.netlify.app/" target="_blank">
+              Vue
+            </a>
+          </NavBarItemContainerLink>
         </BotNav>
         <BotNav className="d-flex justify-content-end">
           <SwitchBox>{CustomSwitch} </SwitchBox>
@@ -65,6 +71,32 @@ const Logo = styled(BotNavBar.Brand)`
   font-size: 2.5rem;
   @media (max-width: 550px) {
     font-size: 1.7rem;
+  }
+`;
+
+const NavBarItemContainerLink = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 100%;
+  cursor: auto;
+  @media (max-width: 1220px) {
+    padding-left: 2vh;
+    padding-right: 2vh;
+  }
+  @media (max-width: 1070px) {
+    padding-left: 1vh;
+    padding-right: 1vh;
+  }
+  @media (max-width: 1000px) {
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0%;
+    border: none;
   }
 `;
 
