@@ -62,21 +62,16 @@ const Projects = () => {
                 <Card.Text>{repo.description}</Card.Text>
                 <Card.Footer>Language: {repo.language}</Card.Footer>
                 <p>
-                  Github: <br />
                   <Card.Link href={repo.url} target="_blank">
-                    {repo.url}
+                    <LinkButton>Github</LinkButton>
                   </Card.Link>
                 </p>
                 {repo.homepage === "null" ? (
                   ""
                 ) : (
-                  <p>
-                    Homepage: <br />
-                    <Card.Link href={repo.homepage} target="_blank">
-                      {" "}
-                      {repo.homepage}
-                    </Card.Link>
-                  </p>
+                  <Card.Link href={repo.homepage} target="_blank">
+                    <LinkButton>HomePage</LinkButton>
+                  </Card.Link>
                 )}
               </Card.Body>
               <Card.Footer>
@@ -98,6 +93,15 @@ const CardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+const LinkButton = styled.button`
+  background-color: ${(props) => props.theme.colors.forth};
+  padding: 1rem;
+  border-radius: 30%;
+  :hover {
+    border: none;
+  }
 `;
 
 const CustomCard = styled(Card)`
