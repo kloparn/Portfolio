@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Spinner, Card } from "react-bootstrap";
+import { Spinner, Card, Button } from "react-bootstrap";
 
 interface gitRepo {
   id: string;
@@ -62,6 +62,7 @@ const Projects = () => {
                 <Card.Text>{repo.description}</Card.Text>
                 <Card.Footer>Language: {repo.language}</Card.Footer>
                 <p>
+                  <br />
                   <Card.Link href={repo.url} target="_blank">
                     <LinkButton>Github</LinkButton>
                   </Card.Link>
@@ -95,13 +96,8 @@ const CardWrapper = styled.div`
   justify-content: center;
 `;
 
-const LinkButton = styled.button`
-  background-color: ${(props) => props.theme.colors.forth};
-  padding: 1rem;
-  border-radius: 30%;
-  :hover {
-    border: none;
-  }
+const LinkButton = styled(Button)`
+  font-size: 1.2rem;
 `;
 
 const CustomCard = styled(Card)`
