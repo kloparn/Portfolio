@@ -48,7 +48,6 @@ code {
 
 .containerCustom {
   opacity: 1;
-
 }
 
 .containerCustom .card {
@@ -79,7 +78,7 @@ code {
 }
 
 .containerCustom .card:nth-child(2) .icon {
-  background-image: url("https://media-exp1.licdn.com/dms/image/C4D03AQEc_j9Pf0SB8Q/profile-displayphoto-shrink_200_200/0?e=1597881600&v=beta&t=yPyVBxkvMCO_rScfTr2ASn25J6W2-tfFZMppccopgGU");
+  background-image: url("https://media-exp1.licdn.com/dms/image/C4D03AQEc_j9Pf0SB8Q/profile-displayphoto-shrink_200_200/0?e=1605139200&v=beta&t=muQuaFu6ZB1V_oBdUgAxm9zHQr8P48o5HZKzlwTAAUA");
   background-repeat: no-repeat;
   background-position: center;
   background-color: #6eadd4;
@@ -94,7 +93,6 @@ code {
   background-size: cover;
   display: block;
 }
-
 
 i {
   position: absolute;
@@ -187,8 +185,8 @@ i {
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: local('Roboto'), url("./fonts/Roboto-Light.ttf") format('truetype');
+  font-family: "Roboto";
+  src: local("Roboto"), url("./fonts/Roboto-Light.ttf") format("truetype");
 }
 
 #switch-picture {
