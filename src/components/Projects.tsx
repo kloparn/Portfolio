@@ -14,6 +14,7 @@ interface gitRepo {
 }
 
 const Projects = () => {
+  const [slowLoad, setSlowLoad] = useState("");
   const [git, setGit] = useState([] as gitRepo[]);
   const [retrieved, setRetrieved] = useState(false);
   useEffect(() => {
@@ -35,6 +36,13 @@ const Projects = () => {
     fetchGit();
   }, []);
 
+  const slowLoader = () => {
+    setTimeout(slowInfo, 5000);
+  };
+  const slowInfo = () => {
+    setSlowLoad("The API is starting up if you see this...");
+  };
+
   return (
     <CardWrapper>
       {!retrieved ? (
@@ -43,6 +51,8 @@ const Projects = () => {
             <span className="sr-only">Loading...</span>
           </Spinner>
           <h2>Loading projects from api...</h2>
+          {slowLoader()}
+          <h2>{slowLoad}</h2>
         </Information>
       ) : (
         git.map((repo) => {
