@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+
+@theme {
+	/* Summer Breeze palette */
+	--color-warm-white: #FFF8F0;
+	--color-soft-peach: #FFDAB9;
+	--color-sky-blue: #87CEEB;
+	--color-deep-sky: #5BA4CF;
+	--color-sage-green: #B2C9AB;
+	--color-golden-hour: #F4C065;
+	--color-warm-charcoal: #2D2D2D;
+	--color-soft-cream: #FAF3E8;
+	--color-muted-rose: #D4A5A5;
+
+	/* Semantic tokens */
+	--color-bg: var(--color-warm-white);
+	--color-bg-card: var(--color-soft-cream);
+	--color-text: var(--color-warm-charcoal);
+	--color-text-muted: #6B6B6B;
+	--color-accent: var(--color-deep-sky);
+	--color-accent-hover: var(--color-sky-blue);
+
+	/* Typography */
+	--font-display: 'DM Serif Display', Georgia, serif;
+	--font-body: 'DM Sans', system-ui, sans-serif;
+
+	/* Spacing */
+	--spacing-section: 8rem;
+}
+
+/* Base styles */
+html {
+	font-family: var(--font-body);
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	scroll-behavior: smooth;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode overrides */
+html.dark {
+	--color-bg: #1a1a2e;
+	--color-bg-card: #252540;
+	--color-text: #E8E0D4;
+	--color-text-muted: #9B9B9B;
+	--color-accent: #7BC0E8;
+	--color-accent-hover: #A8D8F0;
+	--color-soft-peach: #8B6F5C;
+	--color-sky-blue: #5A9BBF;
+	--color-sage-green: #6B8B63;
+	--color-golden-hour: #C9993A;
+	--color-soft-cream: #2A2A45;
+	--color-warm-white: #1a1a2e;
+}
+
+/* Selection */
+::selection {
+	background-color: var(--color-soft-peach);
+	color: var(--color-warm-charcoal);
+}
+
+html.dark ::selection {
+	background-color: var(--color-deep-sky);
+	color: var(--color-warm-white);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-soft-peach);
+	border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+	background: var(--color-accent);
+}
+
+/* Animated gradient for hero backgrounds */
+@keyframes gradient-shift {
+	0%, 100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+/* Blob float animation */
+@keyframes blob-drift {
+	0%, 100% {
+		transform: translate(0, 0) scale(1);
+	}
+	33% {
+		transform: translate(30px, -20px) scale(1.05);
+	}
+	66% {
+		transform: translate(-20px, 15px) scale(0.95);
+	}
+}
+
+/* Gentle float */
+@keyframes float {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+/* Reveal animation */
+@keyframes reveal-up {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+	opacity: 1;
+	transform: translateY(0);
+}

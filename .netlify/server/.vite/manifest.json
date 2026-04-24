@@ -1,0 +1,285 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_internal.js",
+      "_shared-server.js"
+    ]
+  },
+  "_BreezyBlob.js": {
+    "file": "chunks/BreezyBlob.js",
+    "name": "BreezyBlob",
+    "imports": [
+      "_environment.js"
+    ]
+  },
+  "_GithubIcon.js": {
+    "file": "chunks/GithubIcon.js",
+    "name": "GithubIcon",
+    "imports": [
+      "_environment.js"
+    ]
+  },
+  "_Icon.js": {
+    "file": "chunks/Icon.js",
+    "name": "Icon",
+    "imports": [
+      "_environment.js"
+    ]
+  },
+  "_LinkedinIcon.js": {
+    "file": "chunks/LinkedinIcon.js",
+    "name": "LinkedinIcon",
+    "imports": [
+      "_environment.js"
+    ]
+  },
+  "_ProjectCard.js": {
+    "file": "chunks/ProjectCard.js",
+    "name": "ProjectCard",
+    "imports": [
+      "_environment.js",
+      "_Icon.js",
+      "_GithubIcon.js"
+    ]
+  },
+  "_ScrollReveal.js": {
+    "file": "chunks/ScrollReveal.js",
+    "name": "ScrollReveal",
+    "imports": [
+      "_environment.js"
+    ]
+  },
+  "_SkillPill.js": {
+    "file": "chunks/SkillPill.js",
+    "name": "SkillPill",
+    "imports": [
+      "_environment.js"
+    ]
+  },
+  "_environment.js": {
+    "file": "chunks/environment.js",
+    "name": "environment"
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports",
+    "imports": [
+      "_environment.js"
+    ]
+  },
+  "_github.js": {
+    "file": "chunks/github.js",
+    "name": "github",
+    "imports": [
+      "_shared-server.js"
+    ]
+  },
+  "_i18n.js": {
+    "file": "chunks/i18n.js",
+    "name": "i18n"
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_environment.js"
+    ],
+    "dynamicImports": [
+      "src/hooks.server.ts"
+    ]
+  },
+  "_shared-server.js": {
+    "file": "chunks/shared-server.js",
+    "name": "shared-server"
+  },
+  "_shared.js": {
+    "file": "chunks/shared.js",
+    "name": "shared",
+    "imports": [
+      "_environment.js"
+    ]
+  },
+  "_state.js": {
+    "file": "chunks/state.js",
+    "name": "state",
+    "imports": [
+      "_environment.js",
+      "_internal.js",
+      "_exports.js",
+      "_shared.js"
+    ]
+  },
+  "_utils.js": {
+    "file": "chunks/utils.js",
+    "name": "utils",
+    "imports": [
+      "_shared-server.js",
+      "_shared.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
+    "file": "remote-entry.js",
+    "name": "remote-entry",
+    "src": "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_utils.js",
+      "_shared.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_state.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_internal.js",
+      "_utils.js",
+      "_exports.js",
+      "_shared-server.js",
+      "_shared.js"
+    ]
+  },
+  "src/hooks.server.ts": {
+    "file": "entries/hooks.server.js",
+    "name": "entries/hooks.server",
+    "src": "src/hooks.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_i18n.js"
+    ]
+  },
+  "src/routes/+layout.server.ts": {
+    "file": "entries/pages/_layout.server.ts.js",
+    "name": "entries/pages/_layout.server.ts",
+    "src": "src/routes/+layout.server.ts",
+    "isEntry": true
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_state.js",
+      "_Icon.js",
+      "_GithubIcon.js",
+      "_LinkedinIcon.js",
+      "_i18n.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.BzXKeeKE.css"
+    ]
+  },
+  "src/routes/+page.server.ts": {
+    "file": "entries/pages/_page.server.ts.js",
+    "name": "entries/pages/_page.server.ts",
+    "src": "src/routes/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_github.js"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_state.js",
+      "_Icon.js",
+      "_ProjectCard.js",
+      "_BreezyBlob.js",
+      "_ScrollReveal.js",
+      "_SkillPill.js",
+      "_i18n.js"
+    ]
+  },
+  "src/routes/about/+page.svelte": {
+    "file": "entries/pages/about/_page.svelte.js",
+    "name": "entries/pages/about/_page.svelte",
+    "src": "src/routes/about/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_state.js",
+      "_Icon.js",
+      "_ScrollReveal.js",
+      "_SkillPill.js",
+      "_i18n.js"
+    ]
+  },
+  "src/routes/api/github/+server.ts": {
+    "file": "entries/endpoints/api/github/_server.ts.js",
+    "name": "entries/endpoints/api/github/_server.ts",
+    "src": "src/routes/api/github/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_github.js"
+    ]
+  },
+  "src/routes/contact/+page.svelte": {
+    "file": "entries/pages/contact/_page.svelte.js",
+    "name": "entries/pages/contact/_page.svelte",
+    "src": "src/routes/contact/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_state.js",
+      "_Icon.js",
+      "_BreezyBlob.js",
+      "_ScrollReveal.js",
+      "_GithubIcon.js",
+      "_LinkedinIcon.js",
+      "_i18n.js"
+    ]
+  },
+  "src/routes/projects/+page.server.ts": {
+    "file": "entries/pages/projects/_page.server.ts.js",
+    "name": "entries/pages/projects/_page.server.ts",
+    "src": "src/routes/projects/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_github.js"
+    ]
+  },
+  "src/routes/projects/+page.svelte": {
+    "file": "entries/pages/projects/_page.svelte.js",
+    "name": "entries/pages/projects/_page.svelte",
+    "src": "src/routes/projects/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_state.js",
+      "_ProjectCard.js",
+      "_BreezyBlob.js",
+      "_ScrollReveal.js",
+      "_i18n.js"
+    ]
+  },
+  "src/routes/sitemap.xml/+server.ts": {
+    "file": "entries/endpoints/sitemap.xml/_server.ts.js",
+    "name": "entries/endpoints/sitemap.xml/_server.ts",
+    "src": "src/routes/sitemap.xml/+server.ts",
+    "isEntry": true
+  }
+}
