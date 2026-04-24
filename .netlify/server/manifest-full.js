@@ -10,7 +10,7 @@ return {
 	assets: new Set(["profile.jpg","robots.txt","selfie.png"]),
 	mimeTypes: {".jpg":"image/jpeg",".txt":"text/plain",".png":"image/png"},
 	_: {
-		client: {start:"_app/immutable/entry/start.DpaQd9KI.js",app:"_app/immutable/entry/app.BxNFYMrg.js",imports:["_app/immutable/entry/start.DpaQd9KI.js","_app/immutable/chunks/DyosG_hu.js","_app/immutable/chunks/B1k2mX6G.js","_app/immutable/entry/app.BxNFYMrg.js","_app/immutable/chunks/B1k2mX6G.js","_app/immutable/chunks/D1hYfEew.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.DK1GR36E.js",app:"_app/immutable/entry/app.BbNXae6L.js",imports:["_app/immutable/entry/start.DK1GR36E.js","_app/immutable/chunks/D37YEDw5.js","_app/immutable/chunks/B1k2mX6G.js","_app/immutable/entry/app.BbNXae6L.js","_app/immutable/chunks/B1k2mX6G.js","_app/immutable/chunks/D1hYfEew.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
