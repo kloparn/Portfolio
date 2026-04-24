@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import en from '../../src/lib/i18n/en';
 
-// Default locale is English since Playwright doesn't send Accept-Language: sv
 const t = en;
 
 test.describe('Navigation', () => {

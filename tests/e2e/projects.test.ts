@@ -4,34 +4,40 @@ import en from '../../src/lib/i18n/en';
 const t = en;
 
 test.describe('Projects', () => {
-	test('projects page loads and displays repos', async ({ page }) => {
+	test('projects page renders heading and description', async ({ page }) => {
 		await page.goto('/projects');
 
 		await expect(page.locator('h1')).toContainText(t.projectsHeading);
+		await expect(page.locator('p', { hasText: t.projectsDescription })).toBeVisible();
+	});
+
+	test('project cards render from mock data', async ({ page }) => {
+		await page.goto('/projects');
 
 		const cards = page.locator('article');
-		await expect(cards.first()).toBeVisible({ timeout: 10000 });
+		await expect(cards).toHaveCount(2);
+
+		await expect(cards.first()).toContainText('mock-project');
 	});
 
 	test('project cards have GitHub links', async ({ page }) => {
 		await page.goto('/projects');
 
 		const firstCard = page.locator('article').first();
-		await expect(firstCard).toBeVisible({ timeout: 10000 });
-
 		const githubLink = firstCard.locator('a[aria-label*="GitHub"]');
 		await expect(githubLink).toBeVisible();
 		await expect(githubLink).toHaveAttribute('href', /github\.com/);
 	});
 
-	test('language filter buttons are present', async ({ page }) => {
+	test('language filter buttons match mock data', async ({ page }) => {
 		await page.goto('/projects');
 
-		const allButton = page.locator('button', { hasText: t.projectsFilterAll });
-		await expect(allButton).toBeVisible();
+		await expect(page.locator('button', { hasText: t.projectsFilterAll })).toBeVisible();
+		await expect(page.locator('button', { hasText: 'TypeScript' })).toBeVisible();
+		await expect(page.locator('button', { hasText: 'Python' })).toBeVisible();
 	});
 
-	test('sort controls work', async ({ page }) => {
+	test('sort controls are present', async ({ page }) => {
 		await page.goto('/projects');
 
 		await expect(page.locator('button', { hasText: t.projectsSortRecent })).toBeVisible();
@@ -39,26 +45,37 @@ test.describe('Projects', () => {
 		await expect(page.locator('button', { hasText: t.projectsSortAz })).toBeVisible();
 	});
 
+	test('filtering by language works', async ({ page }) => {
+		await page.goto('/projects');
+
+		await page.locator('button', { hasText: 'TypeScript' }).click();
+		const cards = page.locator('article');
+		await expect(cards).toHaveCount(1);
+		await expect(cards.first()).toContainText('mock-project');
+
+		// Clear filter
+		await page.locator('button', { hasText: t.projectsFilterAll }).click();
+		await expect(page.locator('article')).toHaveCount(2);
+	});
+
 	test('homepage shows featured projects', async ({ page }) => {
 		await page.goto('/');
 
-		const featuredSection = page.locator(`text=${t.featuredTitle}`);
-		await expect(featuredSection).toBeVisible({ timeout: 10000 });
+		await expect(page.locator(`text=${t.featuredTitle}`)).toBeVisible();
+		await expect(page.locator('article').first()).toContainText('mock-project');
 	});
 
-	test('GitHub API endpoint returns JSON', async ({ request }) => {
+	test('internal API endpoint returns mock data', async ({ request }) => {
 		const response = await request.get('/api/github');
 		expect(response.ok()).toBeTruthy();
 
 		const data = await response.json();
 		expect(data).toHaveProperty('projects');
-		expect(Array.isArray(data.projects)).toBeTruthy();
 		expect(data).toHaveProperty('error');
-
-		if (data.projects.length > 0) {
-			expect(data.projects[0]).toHaveProperty('name');
-			expect(data.projects[0]).toHaveProperty('url');
-			expect(data.projects[0]).toHaveProperty('language');
-		}
+		expect(data.error).toBe(false);
+		expect(data.projects).toHaveLength(2);
+		expect(data.projects[0]).toHaveProperty('name');
+		expect(data.projects[0]).toHaveProperty('url');
+		expect(data.projects[0]).toHaveProperty('language');
 	});
 });

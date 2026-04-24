@@ -37,7 +37,16 @@ function toProject(repo: GitHubRepo): Project {
 	};
 }
 
+const MOCK_PROJECTS: Project[] = [
+	{ name: 'mock-project', description: 'Test project', url: 'https://github.com/kloparn/mock-project', homepage: null, language: 'TypeScript', updatedAt: '2026-04-01T10:00:00Z', stars: 1, topics: [] },
+	{ name: 'mock-project-2', description: 'Another test project', url: 'https://github.com/kloparn/mock-project-2', homepage: null, language: 'Python', updatedAt: '2026-03-01T10:00:00Z', stars: 0, topics: [] }
+];
+
 export async function fetchRepos(): Promise<GitHubResult> {
+	if (env.USE_MOCK_DATA === 'true') {
+		return { projects: MOCK_PROJECTS, error: false };
+	}
+
 	if (cache && Date.now() - cache.timestamp < CACHE_TTL) {
 		return { projects: cache.data, error: false };
 	}

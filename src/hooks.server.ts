@@ -7,9 +7,14 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	event.locals.locale = locale;
 
-	return resolve(event, {
+	const response = await resolve(event, {
 		transformPageChunk: ({ html }) => {
 			return html.replace('<html lang="en">', `<html lang="${locale}" class="${theme}">`);
 		}
 	});
+
+	// Tell CDN to cache separately per language
+	response.headers.set('Vary', 'Accept-Language');
+
+	return response;
 };
