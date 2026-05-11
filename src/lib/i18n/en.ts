@@ -33,6 +33,13 @@ export default {
 	echoSubtext: 'Working on this with a close friend. Free to start, setup takes under 60 seconds.',
 	echoCtaText: 'Check it out',
 
+	// Home ignidevs
+	ignidevsLabel: 'The studio behind it',
+	ignidevsHeadingPrefix: 'Co-founder of ',
+	ignidevsHeadingSuffix: '',
+	ignidevsDescription: 'We light up hard problems. The software studio I co-founded — building tools for niche communities that mainstream platforms overlook. Echo is our first release.',
+	ignidevsStackLabel: 'Stack:',
+
 	// Home CTA
 	ctaTitle: 'Interested in working together?',
 	ctaDescription: "I'm always open to discussing new projects and opportunities.",

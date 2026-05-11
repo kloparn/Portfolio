@@ -2,12 +2,24 @@
 	import '../app.css';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { getTranslations, type Locale } from '$lib/i18n';
+	import { getTranslations, type Locale, locales } from '$lib/i18n';
 	import type { Snippet } from 'svelte';
 
 	let { data, children }: { data: { theme: string; locale: Locale }; children: Snippet } = $props();
 	let theme = $state('light');
 	const t = $derived(getTranslations(data.locale));
+
+	const ogLocaleMap: Record<Locale, string> = {
+		en: 'en_US',
+		sv: 'sv_SE',
+		es: 'es_ES',
+		ja: 'ja_JP'
+	};
+
+	const ogLocale = $derived(ogLocaleMap[data.locale]);
+	const ogLocaleAlternates = $derived(
+		locales.filter((l) => l !== data.locale).map((l) => ogLocaleMap[l])
+	);
 
 	$effect(() => {
 		theme = data.theme;
@@ -16,6 +28,10 @@
 
 <svelte:head>
 	<title>{t.siteTitle}</title>
+	<meta property="og:locale" content={ogLocale} />
+	{#each ogLocaleAlternates as alt}
+		<meta property="og:locale:alternate" content={alt} />
+	{/each}
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">

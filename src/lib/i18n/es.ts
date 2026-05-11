@@ -33,6 +33,13 @@ export default {
 	echoSubtext: 'Trabajando en esto con un amigo cercano. Gratis para empezar, la configuración toma menos de 60 segundos.',
 	echoCtaText: 'Échale un vistazo',
 
+	// Home ignidevs
+	ignidevsLabel: 'El estudio detrás',
+	ignidevsHeadingPrefix: 'Cofundador de ',
+	ignidevsHeadingSuffix: '',
+	ignidevsDescription: 'Iluminamos problemas difíciles. El estudio de software que cofundé — construyendo herramientas para comunidades de nicho que las plataformas mainstream pasan por alto. Echo es nuestro primer lanzamiento.',
+	ignidevsStackLabel: 'Stack:',
+
 	// Home CTA
 	ctaTitle: '¿Interesado en trabajar juntos?',
 	ctaDescription: 'Siempre estoy abierto a discutir nuevos proyectos y oportunidades.',

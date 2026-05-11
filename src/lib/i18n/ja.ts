@@ -35,6 +35,13 @@ export default {
 	echoSubtext: '親友と一緒に作ってます。無料で始められて、セットアップは60秒以内。マジで。', // "Building this with a close friend. Free to start, setup in under 60 seconds. For real."
 	echoCtaText: 'チェックする', // "Check it out"
 
+	// Home ignidevs
+	ignidevsLabel: 'バックにいるスタジオ', // "The studio behind it"
+	ignidevsHeadingPrefix: '', // Japanese word order — handled by suffix
+	ignidevsHeadingSuffix: ' の共同創設者', // "Co-founder of ignidevs"
+	ignidevsDescription: '難しい問題に火を灯す。共同設立したソフトウェアスタジオで、メインストリームのプラットフォームが見過ごすニッチなコミュニティ向けにツールを作ってます。Echoが第一弾。', // "Lighting up hard problems. The software studio I co-founded — building tools for niche communities mainstream platforms overlook. Echo is our first release."
+	ignidevsStackLabel: 'スタック:', // "Stack:"
+
 	// Home CTA
 	ctaTitle: '一緒に何か作りませんか？', // "Wanna build something together?"
 	ctaDescription: '新しいプロジェクトやチャンスについて話すのはいつでも歓迎です。コーヒーは自分で用意してね。', // "Always happy to talk about new projects and opportunities. Bring your own coffee though."

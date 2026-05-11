@@ -40,6 +40,26 @@
 	<link rel="canonical" href="https://adamhakansson.dev/contact" />
 	<meta property="og:url" content="https://adamhakansson.dev/contact" />
 	<meta property="og:title" content={t.contactTitle} />
+	<meta property="og:description" content={t.contactDescription} />
+	<meta name="twitter:title" content={t.contactTitle} />
+	<meta name="twitter:description" content={t.contactDescription} />
+
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "ContactPage",
+		"url": "https://adamhakansson.dev/contact",
+		"name": "Contact Adam Hakansson",
+		"description": "Get in touch with Adam Hakansson — Software Engineer based in Sweden."
+	})}</script>`}
+
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adamhakansson.dev" },
+			{ "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://adamhakansson.dev/contact" }
+		]
+	})}</script>`}
 </svelte:head>
 
 <div class="flex min-h-screen items-center pt-20 pb-24">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowRight, ChevronDown } from 'lucide-svelte';
+	import { ArrowRight, ChevronDown, Flame } from 'lucide-svelte';
 	import BreezyBlob from '$lib/components/BreezyBlob.svelte';
 	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
 	import SkillPill from '$lib/components/SkillPill.svelte';
@@ -33,7 +33,6 @@
 	<meta property="og:url" content="https://adamhakansson.dev" />
 	<meta property="og:title" content={t.siteTitle} />
 	<meta property="og:description" content={t.siteDescription} />
-	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={t.siteTitle} />
 	<meta name="twitter:description" content={t.siteDescription} />
 
@@ -41,13 +40,40 @@
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Adam Hakansson",
+		"givenName": "Adam",
+		"familyName": "Håkansson",
 		"url": "https://adamhakansson.dev",
+		"image": "https://adamhakansson.dev/profile.jpg",
 		"jobTitle": "Software Engineer",
+		"address": {
+			"@type": "PostalAddress",
+			"addressCountry": "SE"
+		},
+		"nationality": "Swedish",
+		"alumniOf": {
+			"@type": "CollegeOrUniversity",
+			"name": "Jönköping University",
+			"sameAs": "https://ju.se/"
+		},
+		"hasCredential": {
+			"@type": "EducationalOccupationalCredential",
+			"name": "Google Cloud Professional Cloud Architect",
+			"url": "https://www.credly.com/badges/eeafe348-cb24-4586-91f7-00c08b1464ee/linked_in_profile",
+			"credentialCategory": "certification"
+		},
+		"knowsLanguage": ["en", "sv"],
 		"sameAs": [
 			"https://github.com/kloparn",
-			"https://www.linkedin.com/in/adam-h%C3%A5kansson-02a592196/"
+			"https://www.linkedin.com/in/adam-h%C3%A5kansson-02a592196/",
+			"https://ignidevs.com"
 		],
-		"knowsAbout": ["TypeScript", "React", "Svelte", "Node.js", "Python", "Google Cloud", "PostgreSQL", "Docker", "Kubernetes", "Terraform"]
+		"knowsAbout": ["TypeScript", "React", "Svelte", "Node.js", "Python", "Google Cloud", "PostgreSQL", "Docker", "Kubernetes", "Terraform"],
+		"affiliation": {
+			"@type": "Organization",
+			"name": "ignidevs",
+			"url": "https://ignidevs.com",
+			"description": "Software studio building tools for niche communities."
+		}
 	})}</script>`}
 </svelte:head>
 
@@ -192,6 +218,41 @@
 					{/each}
 				</div>
 			</div>
+		</ScrollReveal>
+	</div>
+</section>
+
+<!-- ignidevs studio callout -->
+<section class="py-20 px-6">
+	<div class="mx-auto max-w-4xl">
+		<ScrollReveal>
+			<a
+				href="https://ignidevs.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group flex flex-col items-start gap-6 rounded-2xl border border-soft-peach/20 bg-bg-card/40 p-8 transition-all hover:border-golden-hour/40 hover:shadow-lg hover:shadow-golden-hour/10 dark:border-accent/10 sm:flex-row sm:items-center sm:gap-8 sm:p-10"
+			>
+				<div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-golden-hour/15 text-golden-hour ring-1 ring-golden-hour/20 transition-transform group-hover:rotate-6 group-hover:scale-110">
+					<Flame class="h-7 w-7" />
+				</div>
+				<div class="flex-1">
+					<p class="mb-1 text-xs font-medium tracking-[0.2em] uppercase text-golden-hour">{t.ignidevsLabel}</p>
+					<h2 class="font-display text-2xl sm:text-3xl">
+						{t.ignidevsHeadingPrefix}<span class="text-golden-hour">ignidevs</span>{t.ignidevsHeadingSuffix}
+					</h2>
+					<p class="mt-3 text-base leading-relaxed text-text-muted">{t.ignidevsDescription}</p>
+					<div class="mt-4 flex flex-wrap items-center gap-3">
+						<span class="text-xs font-medium text-text-muted">{t.ignidevsStackLabel}</span>
+						{#each ['Nuxt', 'Convex'] as tech}
+							<span class="rounded-full border border-golden-hour/30 px-2.5 py-0.5 text-xs font-medium text-golden-hour/90">{tech}</span>
+						{/each}
+					</div>
+				</div>
+				<div class="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-text-muted transition-colors group-hover:text-golden-hour">
+					ignidevs.com
+					<ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
+				</div>
+			</a>
 		</ScrollReveal>
 	</div>
 </section>

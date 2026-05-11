@@ -33,6 +33,13 @@ export default {
 	echoSubtext: 'Jobbar på detta med en nära vän. Gratis att börja, setup tar under 60 sekunder.',
 	echoCtaText: 'Kolla in det',
 
+	// Home ignidevs
+	ignidevsLabel: 'Studion bakom det',
+	ignidevsHeadingPrefix: 'Medgrundare av ',
+	ignidevsHeadingSuffix: '',
+	ignidevsDescription: 'Vi tänder upp svåra problem. Mjukvarustudion jag grundade tillsammans med en vän — vi bygger verktyg för nischade communities som de stora plattformarna missar. Echo är vår första release.',
+	ignidevsStackLabel: 'Stack:',
+
 	// Home CTA
 	ctaTitle: 'Intresserad av att jobba ihop?',
 	ctaDescription: 'Jag är alltid öppen för att diskutera nya projekt och möjligheter.',
