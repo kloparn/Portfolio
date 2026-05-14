@@ -66,7 +66,20 @@ describe('i18n', () => {
 				const t = getTranslations(locale);
 				const empty = enKeys.filter((key) => {
 					const val = t[key];
-					return typeof val === 'string' && val.trim() === '';
+					if (typeof val !== 'string' || val.trim() !== '') return false;
+					// Prefix/Suffix pairs may be empty in one half when the other carries the content,
+					// to accommodate word-order differences (e.g. Japanese).
+					const keyStr = key as string;
+					const pairKey = keyStr.endsWith('Prefix')
+						? (keyStr.slice(0, -'Prefix'.length) + 'Suffix')
+						: keyStr.endsWith('Suffix')
+						? (keyStr.slice(0, -'Suffix'.length) + 'Prefix')
+						: null;
+					if (pairKey && pairKey in t) {
+						const pairVal = (t as Record<string, unknown>)[pairKey];
+						if (typeof pairVal === 'string' && pairVal.trim() !== '') return false;
+					}
+					return true;
 				});
 				expect(empty, `Empty values in ${locale}: ${empty.join(', ')}`).toEqual([]);
 			});

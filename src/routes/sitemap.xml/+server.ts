@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 
-const SITE_URL = 'https://adamhakansson.dev';
+const SITE_URL = 'https://adamhakansson.com';
 
 const pages = ['', '/about', '/projects', '/contact'];
 

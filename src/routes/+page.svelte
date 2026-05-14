@@ -29,8 +29,8 @@
 <svelte:head>
 	<title>{t.siteTitle}</title>
 	<meta name="description" content={t.siteDescription} />
-	<link rel="canonical" href="https://adamhakansson.dev" />
-	<meta property="og:url" content="https://adamhakansson.dev" />
+	<link rel="canonical" href="https://adamhakansson.com" />
+	<meta property="og:url" content="https://adamhakansson.com" />
 	<meta property="og:title" content={t.siteTitle} />
 	<meta property="og:description" content={t.siteDescription} />
 	<meta name="twitter:title" content={t.siteTitle} />
@@ -42,8 +42,8 @@
 		"name": "Adam Hakansson",
 		"givenName": "Adam",
 		"familyName": "Håkansson",
-		"url": "https://adamhakansson.dev",
-		"image": "https://adamhakansson.dev/profile.jpg",
+		"url": "https://adamhakansson.com",
+		"image": "https://adamhakansson.com/profile.jpg",
 		"jobTitle": "Software Engineer",
 		"address": {
 			"@type": "PostalAddress",

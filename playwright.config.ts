@@ -4,7 +4,10 @@ export default defineConfig({
 	webServer: {
 		command: 'npm run build && npm run preview',
 		port: 3000,
-		reuseExistingServer: !process.env.CI
+		reuseExistingServer: !process.env.CI,
+		env: {
+			USE_MOCK_DATA: 'true'
+		}
 	},
 	testDir: 'tests/e2e',
 	fullyParallel: true,

@@ -32,8 +32,8 @@
 <svelte:head>
 	<title>{t.projectsTitle}</title>
 	<meta name="description" content={t.projectsDescription} />
-	<link rel="canonical" href="https://adamhakansson.dev/projects" />
-	<meta property="og:url" content="https://adamhakansson.dev/projects" />
+	<link rel="canonical" href="https://adamhakansson.com/projects" />
+	<meta property="og:url" content="https://adamhakansson.com/projects" />
 	<meta property="og:title" content={t.projectsTitle} />
 	<meta property="og:description" content={t.projectsDescription} />
 	<meta name="twitter:title" content={t.projectsTitle} />
@@ -42,13 +42,13 @@
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
-		"url": "https://adamhakansson.dev/projects",
+		"url": "https://adamhakansson.com/projects",
 		"name": "Projects by Adam Hakansson",
 		"description": "A collection of projects built and contributed to by Adam Hakansson, pulled live from GitHub.",
 		"author": {
 			"@type": "Person",
 			"name": "Adam Hakansson",
-			"url": "https://adamhakansson.dev"
+			"url": "https://adamhakansson.com"
 		}
 	})}</script>`}
 
@@ -56,8 +56,8 @@
 		"@context": "https://schema.org",
 		"@type": "BreadcrumbList",
 		"itemListElement": [
-			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adamhakansson.dev" },
-			{ "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://adamhakansson.dev/projects" }
+			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adamhakansson.com" },
+			{ "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://adamhakansson.com/projects" }
 		]
 	})}</script>`}
 </svelte:head>

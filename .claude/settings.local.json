@@ -5,7 +5,11 @@
       "Bash(npm run *)",
       "Bash(npm audit *)",
       "Bash(npm ls *)",
-      "Bash(npm view *)"
+      "Bash(npm view *)",
+      "Bash(awk NR>=1195 && NR<=1215 {print NR\": \"substr\\($0, 1, 500\\)} *)",
+      "Bash(awk NR>=1212 && NR<=1230 {print NR\": \"substr\\($0, 1, 800\\)} *)",
+      "Bash(USE_MOCK_DATA=true npx playwright test)",
+      "Bash(awk -F/ '{print $2}')"
     ]
   }
 }

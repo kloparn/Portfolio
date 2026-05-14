@@ -1,4 +1,4 @@
-# adamhakansson.dev
+# adamhakansson.com
 
 Personal portfolio site for Adam Håkansson, Software Engineer based in Sweden.
 
@@ -49,7 +49,7 @@ npm run check        # svelte-check
 
 ## Links
 
-- [Portfolio](https://adamhakansson.dev)
+- [Portfolio](https://adamhakansson.com)
 - [GitHub](https://github.com/kloparn)
 - [LinkedIn](https://www.linkedin.com/in/adam-håkansson-15942313a/)
 - [GCP Certification](https://www.credly.com/badges/eeafe348-cb24-4586-91f7-00c08b1464ee/linked_in_profile)

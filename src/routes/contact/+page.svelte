@@ -37,8 +37,8 @@
 <svelte:head>
 	<title>{t.contactTitle}</title>
 	<meta name="description" content={t.contactDescription} />
-	<link rel="canonical" href="https://adamhakansson.dev/contact" />
-	<meta property="og:url" content="https://adamhakansson.dev/contact" />
+	<link rel="canonical" href="https://adamhakansson.com/contact" />
+	<meta property="og:url" content="https://adamhakansson.com/contact" />
 	<meta property="og:title" content={t.contactTitle} />
 	<meta property="og:description" content={t.contactDescription} />
 	<meta name="twitter:title" content={t.contactTitle} />
@@ -47,7 +47,7 @@
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "ContactPage",
-		"url": "https://adamhakansson.dev/contact",
+		"url": "https://adamhakansson.com/contact",
 		"name": "Contact Adam Hakansson",
 		"description": "Get in touch with Adam Hakansson — Software Engineer based in Sweden."
 	})}</script>`}
@@ -56,8 +56,8 @@
 		"@context": "https://schema.org",
 		"@type": "BreadcrumbList",
 		"itemListElement": [
-			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adamhakansson.dev" },
-			{ "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://adamhakansson.dev/contact" }
+			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adamhakansson.com" },
+			{ "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://adamhakansson.com/contact" }
 		]
 	})}</script>`}
 </svelte:head>

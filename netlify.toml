@@ -9,3 +9,15 @@
   for = "/*"
   [headers.values]
     Netlify-Vary = "header=Accept-Language"
+
+[[redirects]]
+  from = "http://www.adamhakansson.com/*"
+  to = "https://adamhakansson.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.adamhakansson.com/*"
+  to = "https://adamhakansson.com/:splat"
+  status = 301
+  force = true

@@ -30,8 +30,8 @@
 <svelte:head>
 	<title>{t.aboutTitle}</title>
 	<meta name="description" content={t.siteDescription} />
-	<link rel="canonical" href="https://adamhakansson.dev/about" />
-	<meta property="og:url" content="https://adamhakansson.dev/about" />
+	<link rel="canonical" href="https://adamhakansson.com/about" />
+	<meta property="og:url" content="https://adamhakansson.com/about" />
 	<meta property="og:title" content={t.aboutTitle} />
 	<meta property="og:description" content={t.siteDescription} />
 	<meta name="twitter:title" content={t.aboutTitle} />
@@ -40,13 +40,13 @@
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "ProfilePage",
-		"url": "https://adamhakansson.dev/about",
+		"url": "https://adamhakansson.com/about",
 		"mainEntity": {
 			"@type": "Person",
 			"name": "Adam Hakansson",
 			"jobTitle": "Software Engineer",
-			"url": "https://adamhakansson.dev",
-			"image": "https://adamhakansson.dev/profile.jpg",
+			"url": "https://adamhakansson.com",
+			"image": "https://adamhakansson.com/profile.jpg",
 			"sameAs": [
 				"https://github.com/kloparn",
 				"https://www.linkedin.com/in/adam-h%C3%A5kansson-02a592196/",
@@ -59,8 +59,8 @@
 		"@context": "https://schema.org",
 		"@type": "BreadcrumbList",
 		"itemListElement": [
-			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adamhakansson.dev" },
-			{ "@type": "ListItem", "position": 2, "name": "About", "item": "https://adamhakansson.dev/about" }
+			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adamhakansson.com" },
+			{ "@type": "ListItem", "position": 2, "name": "About", "item": "https://adamhakansson.com/about" }
 		]
 	})}</script>`}
 </svelte:head>
